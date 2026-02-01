@@ -1,14 +1,14 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Serviços | Felipe Clarindo",
-  description: "Serviços oferecidos por Felipe Clarindo",
+  title: "Curriculo | Felipe Clarindo",
+  description: "Curriculo do Felipe Clarindo",
   icons: {
     icon: "/images/logo.png",
   },
 };
 
-export default function ServicesLayout({
+export default function ResumerLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;

@@ -1,13 +1,7 @@
-import IntroductionSection from "@/components/sections/IntroductionSection";
-import BackgroundAnimated from "@/components/ui/BackgroundAnimated";
+"use client";
 
-export default function Home() {
-  return (
-    <main className="relative flex min-h-screen flex-col items-center justify-between">
-      <BackgroundAnimated />
+import HomeScreen from "@/components/home/HomeScreen";
 
-      {/* Sections */}
-      <IntroductionSection />
-    </main>
-  );
+export default function HomePage() {
+  return <HomeScreen />;
 }

@@ -1,20 +1,103 @@
 @import "tailwindcss";
 
+/* Variables */
 :root {
-  --color-black: #0a0a0a;
-  --color-green: #00ff00;
-  --bg-color: #f5f5f5;
-  --matrix-green-min: 60;
-  --matrix-green-max: 120;
+  --primary-color: oklch(0.723 0.219 149.579);
+  --secondary-color: #000000;
+  --thirty-color: #ffffff;
+  --fourty-color: #99a1af;
 }
 
-.dark {
-  --bg-color: #000000;
-  --matrix-green-min: 100;
-  --matrix-green-max: 255;
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
 }
 
 body {
-  min-height: 10vh;
-  background-color: var(--color-black);
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+}
+
+/* Dark Theme */
+.dark {
+  --primary-color: oklch(0.723 0.219 149.579);
+  --secondary-color: #ffffff;
+  --thirty-color: #000000;
+}
+
+/* Efeito GLitch */
+.glitch-text {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.glitch-text::before {
+  color: #00ff88;
+  transform: translate(-1px, 0);
+}
+
+.glitch-text::after {
+  color: #00cc66;
+  transform: translate(1px, 0);
+}
+
+.glitch-text:hover::before {
+  animation: glitch-before 0.25s linear;
+}
+
+.glitch-text:hover::after {
+  animation: glitch-after 0.25s linear;
+}
+
+@keyframes glitch-before {
+  0% {
+    opacity: 0;
+    transform: translate(-1px, 0);
+  }
+  30% {
+    opacity: 0.6;
+    transform: translate(-3px, -1px);
+  }
+  60% {
+    opacity: 0.4;
+    transform: translate(-2px, 1px);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-1px, 0);
+  }
+}
+
+@keyframes glitch-after {
+  0% {
+    opacity: 0;
+    transform: translate(1px, 0);
+  }
+  30% {
+    opacity: 0.6;
+    transform: translate(3px, 1px);
+  }
+  60% {
+    opacity: 0.4;
+    transform: translate(2px, -1px);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(1px, 0);
+  }
 }
