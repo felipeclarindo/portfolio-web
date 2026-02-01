@@ -1,0 +1,31 @@
+{
+  "home": {
+    "apresentation": "Sou",
+    "name": "Felipe Clarindo",
+    "description": "um desenvolvedor full stack apaixonado por transformar código em experiências digitais impactantes. Explore minha jornada através de algoritmos e design.",
+    "seeMyWork": "Veja Meu Trabalho"
+  },
+  "header": {
+    "home": "Início",
+    "projects": "Projetos",
+    "resumer": "Resumo",
+    "contact": "Contato",
+    "services": "Serviços"
+  },
+  "footer": {
+    "sectionOne": {
+      "first": "Inicio",
+      "second": "Projetos",
+      "third": "Currículo",
+      "fourth": "Contato"
+    },
+    "sectionTwo": {
+      "first": "Termos de Serviço",
+      "second": "Termos de Uso",
+      "third": "Política de Privacidade",
+      "fourth": "Política de Cookies"
+    },
+    "rightsReserved": "Todos os direitos reservados.",
+    "language": "Idioma"
+  }
+}
