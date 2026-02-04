@@ -3,7 +3,7 @@ import "./globals.css";
 import Footer from "@/components/layout/Footer";
 import { Providers } from "./providers";
 import Header from "@/components/layout/Header";
-import AnimatedBackground from "@/components/layout/AnimatedBackground";
+import AnimatedBackground from "@/components/background/AnimatedBackground";
 
 export const metadata: Metadata = {
   title: "Portfolio | Felipe Clarindo",

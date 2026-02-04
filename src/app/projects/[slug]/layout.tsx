@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Resumer | Felipe Clarindo",
-  description: "Resumer of Felipe Clarindo",
+  title: "Project {x}  | Felipe Clarindo",
+  description: "Specific project of Felipe Clarindo",
   icons: {
     icon: "/images/logo.png",
   },
 };
 
-export default function ResumerLayout({
+export default function ProjectLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
