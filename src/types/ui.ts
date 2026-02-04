@@ -8,4 +8,5 @@ export type IntroductionProps = {
 export type FooterLinkProps = {
   href: string;
   text: string;
+  linkRapido?: boolean;
 };
