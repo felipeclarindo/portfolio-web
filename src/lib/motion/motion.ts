@@ -19,23 +19,11 @@ export const hoverGlitch = {
   },
 };
 
-export const itemHome = {
-  hidden: { opacity: 0, y: 24 },
+export const item: Variants = {
+  hidden: { opacity: 0, y: -24 },
   visible: {
     opacity: 1,
     y: 0,
     transition: { duration: 0.6, ease: "easeOut" },
-  },
-};
-
-export const itemResume: Variants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.45,
-      ease: [0.33, 1, 0.68, 1],
-    },
   },
 };
