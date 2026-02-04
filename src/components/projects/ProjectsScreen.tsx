@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Introduction from "../ui/Introdution";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const projects = [
   {
@@ -29,14 +30,13 @@ const projects = [
 ];
 
 export default function ProjectsScreen() {
+  const { translate } = useLanguage();
+
   return (
     <section className="relative z-10 min-h-screen px-6 pt-28 pb-24">
-      {/* Introduction */}
       <Introduction
-        text={"Projects"}
-        description={
-          "Projetos desenvolvidos com foco em engenharia, performance e experiência do usuário. Cada projeto resolve um problema real."
-        }
+        text={translate("projects.title")}
+        description={translate("projects.description")}
       />
 
       {/* Project List */}
@@ -119,7 +119,7 @@ export default function ProjectsScreen() {
       {/* CTA FINAL */}
       <div className="mt-24 text-center">
         <Link
-          href="/contact"
+          href="/services"
           className="
             inline-flex items-center gap-2
             px-10 py-4
@@ -130,7 +130,7 @@ export default function ProjectsScreen() {
             transition-all duration-300
           "
         >
-          Let’s build something →
+          {translate("projects.seeMyServices")} →
         </Link>
       </div>
     </section>

@@ -1,11 +1,15 @@
 import { FooterLinkProps } from "@/types/ui";
 import Link from "next/link";
 
-
-export default function FooterLink({ href, text }: FooterLinkProps) {
+export default function FooterLink({
+  href,
+  text,
+  linkRapido = false,
+}: Readonly<FooterLinkProps>) {
   return (
     <li className="group">
       <Link
+        target={linkRapido ? undefined : "_blank"}
         href={href}
         className="
           relative inline-flex items-center

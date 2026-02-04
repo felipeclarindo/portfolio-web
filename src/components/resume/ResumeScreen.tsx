@@ -1,8 +1,10 @@
 "use client";
 
-import { itemResume } from "@/lib/motion/motion";
-import { motion, type Variants } from "framer-motion";
+import { container } from "@/lib/motion/motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
+import Introduction from "../ui/Introdution";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const experiences = [
   {
@@ -27,30 +29,15 @@ const skills = {
   Other: ["Git", "Docker", "Automation", "Clean Code"],
 };
 
-const container: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      when: "beforeChildren",
-      staggerChildren: 0.15,
-    },
-  },
-};
-
 export default function ResumeScreen() {
+  const { translate } = useLanguage();
+
   return (
     <section className="relative z-10 min-h-screen px-6 pt-28 pb-24">
-      {/* HERO */}
-      <div className="max-w-5xl mx-auto mb-20 text-center">
-        <h1 className="font-mono text-4xl md:text-6xl text-[var(--primary-color)] mb-6">
-          <span className="opacity-50">&gt;_</span> Resume
-        </h1>
-        <p className="text-gray-300 max-w-2xl mx-auto">
-          Professional experience, skills and technical background focused on
-          building reliable and scalable systems.
-        </p>
-      </div>
+      <Introduction
+        text={translate("resume.title")}
+        description={translate("resume.description")}
+      />
 
       <motion.div
         variants={container}
@@ -59,8 +46,10 @@ export default function ResumeScreen() {
         className="max-w-5xl mx-auto space-y-20"
       >
         {/* EXPERIENCE */}
-        <motion.section variants={itemResume}>
-          <h2 className="font-mono text-2xl text-green-400 mb-8">Experience</h2>
+        <motion.section variants={container}>
+          <h2 className="font-mono text-2xl text-green-400 mb-8">
+            {translate("resume.experience")}
+          </h2>
 
           <div className="space-y-6">
             {experiences.map((exp) => (
@@ -86,8 +75,10 @@ export default function ResumeScreen() {
         </motion.section>
 
         {/* SKILLS */}
-        <motion.section variants={itemResume}>
-          <h2 className="font-mono text-2xl text-green-400 mb-8">Skills</h2>
+        <motion.section variants={container}>
+          <h2 className="font-mono text-2xl text-green-400 mb-8">
+            {translate("resume.skills")}
+          </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {Object.entries(skills).map(([category, items]) => (
@@ -122,7 +113,7 @@ export default function ResumeScreen() {
         </motion.section>
 
         {/* CTA */}
-        <motion.div variants={itemResume} className="text-center">
+        <motion.div variants={container} className="text-center">
           <Link
             href="/contact"
             className="
@@ -135,7 +126,7 @@ export default function ResumeScreen() {
               transition-all duration-300
             "
           >
-            Let’s work together →
+            {translate("resume.discoverMyServices")}
           </Link>
         </motion.div>
       </motion.div>

@@ -1,23 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-const container = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.15 },
-  },
-};
-
-const item = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
-  },
-};
+import Introduction from "../ui/Introdution";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { container } from "@/lib/motion/motion";
 
 const services = [
   {
@@ -47,18 +33,13 @@ const services = [
 ];
 
 export default function ServicesScreen() {
+  const { translate } = useLanguage();
   return (
     <section className="relative z-10 min-h-screen px-6 pt-28 pb-24">
-      {/* HERO */}
-      <div className="max-w-5xl mx-auto mb-20 text-center">
-        <h1 className="font-mono text-4xl md:text-6xl text-[var(--primary-color)] mb-6">
-          <span className="opacity-50">&gt;_</span> Services
-        </h1>
-        <p className="text-gray-300 max-w-2xl mx-auto">
-          I help businesses and individuals build reliable, scalable and
-          efficient digital solutions using modern technologies.
-        </p>
-      </div>
+      <Introduction
+        text={translate("services.title")}
+        description={translate("services.description")}
+      />
 
       <motion.div
         variants={container}
@@ -67,7 +48,7 @@ export default function ServicesScreen() {
         className="max-w-6xl mx-auto space-y-24"
       >
         {/* SERVICES */}
-        <motion.section variants={item}>
+        <motion.section variants={container}>
           <h2 className="font-mono text-2xl text-green-400 mb-10">
             What I offer
           </h2>
@@ -110,7 +91,7 @@ export default function ServicesScreen() {
         </motion.section>
 
         {/* PROCESS */}
-        <motion.section variants={item}>
+        <motion.section variants={container}>
           <h2 className="font-mono text-2xl text-green-400 mb-10">
             How it works
           </h2>
@@ -141,7 +122,7 @@ export default function ServicesScreen() {
         </motion.section>
 
         {/* REQUEST FORM */}
-        <motion.section variants={item}>
+        <motion.section variants={container}>
           <h2 className="font-mono text-2xl text-green-400 mb-10 text-center">
             Request a service
           </h2>

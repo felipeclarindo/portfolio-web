@@ -4,19 +4,22 @@ import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import ThemeToggleButton from "../navigation/ThemeToggleButton";
+import LanguageToggleButton from "../navigation/LanguageToggleButton";
 import { MenuItemProps } from "@/types/navigation";
 import { useEffect, useState } from "react";
 import { hoverGlitch } from "@/lib/motion/motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Header() {
+  const { translate } = useLanguage();
   const [open, setOpen] = useState(false);
 
   const navItems: MenuItemProps[] = [
-    { name: "Home", path: "/" },
-    { name: "Projetos", path: "/projects" },
-    { name: "Currículo", path: "/resume" },
-    { name: "Blog", path: "/blog" },
-    { name: "Services", path: "/services" },
+    { name: translate("header.home"), path: "/" },
+    { name: translate("header.projects"), path: "/projects" },
+    { name: translate("header.resume"), path: "/resume" },
+    { name: translate("header.services"), path: "/services" },
+    { name: translate("header.contact"), path: "/contact" },
   ];
 
   useEffect(() => {
@@ -29,7 +32,6 @@ export default function Header() {
 
   return (
     <>
-      {/* HEADER FIXO */}
       <header
         className="
           fixed top-0 left-0 w-full
@@ -82,9 +84,11 @@ export default function Header() {
           </nav>
 
           {/* Actions */}
-          <div className="flex items-center gap-4">
-            <ThemeToggleButton />
-
+          <div className="items-center gap-3 ">
+            <div className="hidden md:flex items-center gap-3">
+              <LanguageToggleButton />
+              <ThemeToggleButton />
+            </div>
             {/* Mobile Toggle */}
             <button
               onClick={() => setOpen(true)}
@@ -116,6 +120,11 @@ export default function Header() {
             >
               <X size={28} />
             </button>
+          </div>
+
+          <div className="flex justify-center gap-4 pb-6">
+            <LanguageToggleButton />
+            <ThemeToggleButton />
           </div>
 
           {/* Menu */}

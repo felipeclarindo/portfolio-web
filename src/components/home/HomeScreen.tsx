@@ -4,7 +4,8 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import DevConsole from "@/components/home/DevConsole";
-import { container, itemHome } from "@/lib/motion/motion";
+import { container } from "@/lib/motion/motion";
+import Introduction from "../ui/Introdution";
 
 export default function HomeScreen() {
   const { translate } = useLanguage();
@@ -38,58 +39,30 @@ export default function HomeScreen() {
         animate="visible"
         className="relative w-full max-w-5xl text-center"
       >
-        {/* Title */}
-        <motion.h1
-          variants={itemHome}
-          className="
-            font-mono
-            text-[var(--primary-color)]
-            text-4xl md:text-6xl
-            mb-6
-            tracking-tight
-          "
-        >
-          <span className="opacity-50">&gt;_</span>{" "}
-          <span className="relative">
-            Hello, World
-            <span
-              aria-hidden
-              className="
-                absolute -bottom-2 left-0
-                h-[2px] w-full
-                bg-[var(--primary-color)]
-                opacity-30
-              "
-            />
-          </span>
-        </motion.h1>
-
-        {/* Description */}
-        <motion.p
-          variants={itemHome}
-          className="
-            text-gray-300
-            text-base md:text-lg
-            leading-relaxed
-            max-w-3xl
-            mx-auto
-          "
-        >
-          {translate("home.apresentation")}{" "}
-          <span className="text-[var(--primary-color)] font-semibold">
-            {translate("home.name")}
-          </span>
-          , {translate("home.description")}
-        </motion.p>
+        {/* Introduction */}
+        <motion.div variants={container}>
+          <Introduction
+            text="Hello, World"
+            description={
+              <>
+                {translate("home.apresentation")}{" "}
+                <span className="text-[var(--primary-color)] font-semibold">
+                  {translate("home.name")}
+                </span>
+                , {translate("home.description")}
+              </>
+            }
+          />
+        </motion.div>
 
         {/* Console */}
-        <motion.div variants={itemHome} className="mt-12 flex justify-center">
+        <motion.div variants={container} className="mt-12 flex justify-center">
           <DevConsole />
         </motion.div>
 
         {/* CTA */}
         <motion.div
-          variants={itemHome}
+          variants={container}
           className="my-16 flex flex-wrap justify-center gap-6"
         >
           <Link
@@ -103,7 +76,7 @@ export default function HomeScreen() {
               hover:bg-[var(--primary-color)] hover:text-black
             "
           >
-            View Projects →
+            {translate("home.seeMyWork")}
           </Link>
 
           <Link
@@ -118,7 +91,7 @@ export default function HomeScreen() {
               transition-all duration-300
             "
           >
-            Contact
+            {translate("home.contact")}
           </Link>
         </motion.div>
       </motion.div>

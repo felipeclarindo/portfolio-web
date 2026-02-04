@@ -25,18 +25,25 @@ export default function Footer() {
             {">"} Links rápidos
           </h4>
           <ul className="space-y-2">
-            <FooterLink href="/" text={translate("footer.sectionOne.first")} />
+            <FooterLink
+              href="/"
+              text={translate("footer.sectionOne.first")}
+              linkRapido={true}
+            />
             <FooterLink
               href="/projects"
               text={translate("footer.sectionOne.second")}
+              linkRapido={true}
             />
             <FooterLink
               href="/resume"
               text={translate("footer.sectionOne.third")}
+              linkRapido={true}
             />
             <FooterLink
               href="/contact"
               text={translate("footer.sectionOne.fourth")}
+              linkRapido={true}
             />
           </ul>
         </div>
@@ -48,32 +55,32 @@ export default function Footer() {
           </h4>
           <ul className="space-y-2">
             <FooterLink
-              href="/terms-service"
+              href="/terms-of-service"
               text={translate("footer.sectionTwo.first")}
             />
             <FooterLink
-              href="/terms-use"
+              href="/terms-of-use"
               text={translate("footer.sectionTwo.second")}
             />
             <FooterLink
-              href="/polity-privacy"
+              href="/privacy-polity"
               text={translate("footer.sectionTwo.third")}
             />
             <FooterLink
-              href="/polity-cookies"
+              href="/cookies-polity"
               text={translate("footer.sectionTwo.fourth")}
             />
           </ul>
         </div>
 
         {/* BRAND + SOCIAL */}
-        <div className="flex flex-col text-center items-center justify-center md:items-end gap-6 m-auto">
+        <div className="flex flex-col text-center items-center justify-center gap-6 mx-auto">
           <Image
             src="/images/logo.png"
             alt="Felipe Clarindo logo"
-            width={48}
-            height={48}
-            className="opacity-90"
+            width={68}
+            height={68}
+            className="opacity-90 text-center"
           />
 
           <div className="flex gap-4">
