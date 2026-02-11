@@ -4,6 +4,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import Image from "next/image";
 import { Github, Linkedin, Instagram } from "lucide-react";
 import FooterLink from "./FooterLink";
+import SocialIcon from "./SocialIcon";
 
 export default function Footer() {
   const { translate } = useLanguage();
@@ -11,49 +12,50 @@ export default function Footer() {
   return (
     <footer
       className="
-        relative z-[999] isolation-isolate
+        relative z-[999]
         w-full
-        bg-black/60 backdrop-blur-md
-        border-t border-green-500/20
-        font-mono text-sm text-gray-400
+        border-t border-[var(--border-primary)]
+        font-mono text-sm
+        transition-colors
       "
     >
       <div className="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-3 gap-12">
+
         {/* LINKS RÁPIDOS */}
         <div>
-          <h4 className="mb-4 text-green-400 tracking-wider text-xs">
-            {">"} Links rápidos
+          <h4 className="mb-4 text-[var(--brand-primary)] tracking-wider text-xs">
+            {">"} Links
           </h4>
-          <ul className="space-y-2">
+          <ul className="space-y-2 text-[var(--text-secondary)]">
             <FooterLink
               href="/"
               text={translate("footer.sectionOne.first")}
-              linkRapido={true}
+              linkRapido
             />
             <FooterLink
               href="/projects"
               text={translate("footer.sectionOne.second")}
-              linkRapido={true}
+              linkRapido
             />
             <FooterLink
               href="/resume"
               text={translate("footer.sectionOne.third")}
-              linkRapido={true}
+              linkRapido
             />
             <FooterLink
               href="/contact"
               text={translate("footer.sectionOne.fourth")}
-              linkRapido={true}
+              linkRapido
             />
           </ul>
         </div>
 
-        {/* Termos */}
+        {/* TERMOS */}
         <div>
-          <h4 className="mb-4 text-green-400 tracking-wider text-xs">
-            {">"} Termos
+          <h4 className="mb-4 text-[var(--brand-primary)] tracking-wider text-xs">
+            {">"} Legal
           </h4>
-          <ul className="space-y-2">
+          <ul className="space-y-2 text-[var(--text-secondary)]">
             <FooterLink
               href="/terms-of-service"
               text={translate("footer.sectionTwo.first")}
@@ -75,68 +77,42 @@ export default function Footer() {
 
         {/* BRAND + SOCIAL */}
         <div className="flex flex-col text-center items-center justify-center gap-6 mx-auto">
+
           <Image
             src="/images/logo.png"
             alt="Felipe Clarindo logo"
             width={68}
             height={68}
-            className="opacity-90 text-center"
+            className="opacity-90"
           />
 
           <div className="flex gap-4">
-            <a
+            <SocialIcon
               href="https://github.com/felipeclarindo"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Github"
-              className="
-                p-2 rounded-md
-                border border-green-500/20
-                text-green-400
-                hover:text-black hover:bg-green-400
-                transition-all duration-300
-              "
+              label="Github"
             >
               <Github size={18} />
-            </a>
+            </SocialIcon>
 
-            <a
+            <SocialIcon
               href="https://instagram.com/lipethecoder"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              className="
-                p-2 rounded-md
-                border border-green-500/20
-                text-green-400
-                hover:text-black hover:bg-green-400
-                transition-all duration-300
-              "
+              label="Instagram"
             >
               <Instagram size={18} />
-            </a>
+            </SocialIcon>
 
-            <a
+            <SocialIcon
               href="https://linkedin.com/in/felipeclarindo"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              className="
-                p-2 rounded-md
-                border border-green-500/20
-                text-green-400
-                hover:text-black hover:bg-green-400
-                transition-all duration-300
-              "
+              label="LinkedIn"
             >
               <Linkedin size={18} />
-            </a>
+            </SocialIcon>
           </div>
         </div>
       </div>
 
       {/* COPYRIGHT */}
-      <div className="text-center py-4 border-t border-green-500/10 text-xs text-gray-500">
+      <div className="text-center py-4 border-t border-[var(--border-primary)] text-xs text-[var(--text-muted)]">
         © {new Date().getFullYear()} Felipe Clarindo. All rights reserved.
       </div>
     </footer>

@@ -1,4 +1,5 @@
 "use client";
+
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
@@ -23,11 +24,7 @@ export default function Header() {
   ];
 
   useEffect(() => {
-    if (open) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    document.body.style.overflow = open ? "hidden" : "";
   }, [open]);
 
   return (
@@ -36,12 +33,13 @@ export default function Header() {
         className="
           fixed top-0 left-0 w-full
           z-[9999]
-          isolation-isolate
-          bg-black/60 backdrop-blur-md
-          border-b border-green-500/20
+          backdrop-blur-xl
+          border-b border-[var(--border-primary)]
+          transition-colors
         "
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <Image
@@ -53,8 +51,8 @@ export default function Header() {
             />
           </Link>
 
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-10 text-sm font-mono text-green-400">
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-10 text-sm font-mono text-[var(--text-secondary)]">
             {navItems.map((item) => (
               <motion.div
                 key={item.name}
@@ -64,11 +62,10 @@ export default function Header() {
                 <Link
                   href={item.path}
                   className="
-      relative z-10
-      font-mono
-      transition-colors
-      hover:text-green-300
-    "
+                    relative z-10
+                    transition-colors
+                    hover:text-[var(--brand-primary)]
+                  "
                 >
                   {item.name}
                 </Link>
@@ -84,15 +81,16 @@ export default function Header() {
           </nav>
 
           {/* Actions */}
-          <div className="items-center gap-3 ">
+          <div className="flex items-center gap-3">
             <div className="hidden md:flex items-center gap-3">
               <LanguageToggleButton />
               <ThemeToggleButton />
             </div>
+
             {/* Mobile Toggle */}
             <button
               onClick={() => setOpen(true)}
-              className="md:hidden text-green-400"
+              className="md:hidden text-[var(--text-primary)]"
               aria-label="Open menu"
             >
               <Menu size={26} />
@@ -101,40 +99,41 @@ export default function Header() {
         </div>
       </header>
 
-      {/* MOBILE MENU OVERLAY */}
+      {/* MOBILE MENU */}
       {open && (
         <div
           className="
             fixed inset-0 z-[10000]
-            bg-black/95
-            backdrop-blur-sm
+            bg-[var(--bg-primary)] 
             flex flex-col
+            transition-colors
           "
         >
           {/* Close */}
           <div className="flex justify-end px-6 py-4">
             <button
               onClick={() => setOpen(false)}
-              className="text-green-400"
+              className="text-[var(--brand-primary)]"
               aria-label="Close menu"
             >
               <X size={28} />
             </button>
           </div>
 
+          {/* Toggles */}
           <div className="flex justify-center gap-4 pb-6">
             <LanguageToggleButton />
             <ThemeToggleButton />
           </div>
 
-          {/* Menu */}
-          <nav className="flex flex-col items-center justify-center flex-1 gap-8 text-lg font-mono text-green-300">
+          {/* Mobile Nav */}
+          <nav className="flex flex-col items-center justify-center flex-1 gap-8 text-lg font-mono text-[var(--text-primary)]">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.path}
                 onClick={() => setOpen(false)}
-                className="hover:text-green-200 transition"
+                className="hover:text-[var(--brand-primary)] transition-colors"
               >
                 {item.name}
               </Link>

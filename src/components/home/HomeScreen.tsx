@@ -1,100 +1,151 @@
 "use client";
 
 import { useLanguage } from "@/contexts/LanguageContext";
-import Link from "next/link";
 import { motion } from "framer-motion";
-import DevConsole from "@/components/home/DevConsole";
-import { container } from "@/lib/motion/motion";
-import Introduction from "../ui/Introdution";
+import Link from "next/link";
 
 export default function HomeScreen() {
   const { translate } = useLanguage();
-
   return (
     <section
       className="
-        relative z-10
-        min-h-screen
-        px-6
-        pt-28
-        flex flex-col
-        items-center
+        relative 
+        py-40 
+        flex 
+        flex-col 
+        justify-center 
+        items-center 
+        px-6 overflow-hidden 
+        text-[var(--text-primary)]
       "
     >
-      {/* Decorative Grid */}
+
       <div
-        aria-hidden
         className="
-          pointer-events-none
-          absolute inset-0
-          bg-[linear-gradient(to_right,rgba(0,255,140,0.05)_1px,transparent_1px)]
-          bg-[size:48px_48px]
-          opacity-20
+          max-w-6xl 
+          text-center space-y-10
         "
-      />
-
-      <motion.div
-        variants={container}
-        initial="hidden"
-        animate="visible"
-        className="relative w-full max-w-5xl text-center"
       >
-        {/* Introduction */}
-        <motion.div variants={container}>
-          <Introduction
-            text="Hello, World"
-            description={
-              <>
-                {translate("home.apresentation")}{" "}
-                <span className="text-[var(--primary-color)] font-semibold">
-                  {translate("home.name")}
-                </span>
-                , {translate("home.description")}
-              </>
-            }
-          />
-        </motion.div>
 
-        {/* Console */}
-        <motion.div variants={container} className="mt-12 flex justify-center">
-          <DevConsole />
-        </motion.div>
+        {/* HEADLINE */}
+        <motion.h1
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="
+          text-4xl md:text-6xl font-bold leading-tight"
+        >
+          {translate("home.headline.engineering")} {" "}
+          <span className="text-[var(--brand-primary)]">
+            {translate("home.headline.scalableDigitalSystems")}
+          </span>
+          <br />
+          {translate("home.headline.thatDriveRealBusinessGrowth")}
+        </motion.h1>
+
+        {/* SUBTITLE */}
+        <motion.p
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-lg md:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto"
+        >
+          Full Stack Developer & Data Specialist building high-performance
+          applications, intelligent APIs and data-driven platforms with
+          clean architecture and measurable impact.
+        </motion.p>
 
         {/* CTA */}
         <motion.div
-          variants={container}
-          className="my-16 flex flex-wrap justify-center gap-6"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="flex flex-col sm:flex-row justify-center gap-4"
         >
           <Link
             href="/projects"
-            className="
-              inline-flex items-center gap-2
-              px-8 py-3
-              border border-[var(--primary-color)]
-              text-[var(--primary-color)] font-mono
-              transition-all duration-300
-              hover:bg-[var(--primary-color)] hover:text-black
-            "
+            className="px-8 py-4 bg-[var(--brand-primary)] hover:bg-[var(--brand-primary-hover)] text-white rounded-2xl font-semibold transition-all duration-300 shadow-lg hover:scale-105"
           >
-            {translate("home.seeMyWork")}
+            View My Work
           </Link>
 
           <Link
             href="/contact"
-            className="
-              inline-flex items-center gap-2
-              px-8 py-3
-              text-gray-300 font-mono
-              border border-gray-600
-              hover:border-[var(--primary-color)]
-              hover:text-[var(--primary-color)]
-              transition-all duration-300
-            "
+            className="px-8 py-4 border border-[var(--border-primary)] text-[var(--text-primary)] bg-[var(--bg-secondary)] rounded-2xl font-semibold hover:bg-[var(--bg-tertiary)] transition-all duration-300"
           >
-            {translate("home.contact")}
+            Let{`'`}s Build Together
           </Link>
         </motion.div>
-      </motion.div>
+
+        {/* STATS SECTION */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2 }}
+          className="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-16"
+        >
+          <div className="space-y-2">
+            <h2 className="text-3xl font-bold text-[var(--brand-primary)]">
+              +20
+            </h2>
+            <p className="text-[var(--text-muted)]">
+              Projects Delivered
+            </p>
+          </div>
+
+          <div className="space-y-2">
+            <h2 className="text-3xl font-bold text-[var(--brand-primary)]">
+              100%
+            </h2>
+            <p className="text-[var(--text-muted)]">
+              Clean Architecture Focus
+            </p>
+          </div>
+
+          <div className="space-y-2">
+            <h2 className="text-3xl font-bold text-[var(--brand-primary)]">
+              Full Stack
+            </h2>
+            <p className="text-[var(--text-muted)]">
+              Web • API • Data • AI
+            </p>
+          </div>
+        </motion.div>
+
+        {/* TECH STACK */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5 }}
+          className="pt-16"
+        >
+          <p className="text-[var(--text-muted)] mb-6">
+            Technologies I Work With
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-4 text-sm">
+            {[
+              "Next.js",
+              "React",
+              "TypeScript",
+              "Node.js",
+              "Python",
+              "Django",
+              "PostgreSQL",
+              "Docker",
+              "Machine Learning",
+            ].map((tech) => (
+              <span
+                key={tech}
+                className="px-4 py-2 bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-full hover:bg-[var(--bg-tertiary)] transition"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        </motion.div>
+
+      </div>
     </section>
   );
 }

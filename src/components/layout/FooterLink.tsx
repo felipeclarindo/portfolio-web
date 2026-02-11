@@ -15,7 +15,7 @@ export default function FooterLink({
           relative inline-flex items-center
           pl-4
           transition-all duration-200
-          text-gray-400
+          text-[var(--text-muted)]
           group-hover:text-[var(--primary-color)]
           group-focus-within:text-[var(--primary-color)]
           group-hover:translate-x-1

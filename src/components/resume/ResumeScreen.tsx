@@ -33,7 +33,8 @@ export default function ResumeScreen() {
   const { translate } = useLanguage();
 
   return (
-    <section className="relative z-10 min-h-screen px-6 pt-28 pb-24">
+    <section className="relative z-10 min-h-screen px-6 pt-28 pb-24 text-[var(--text-primary)] transition-colors">
+
       <Introduction
         text={translate("resume.title")}
         description={translate("resume.description")}
@@ -43,11 +44,11 @@ export default function ResumeScreen() {
         variants={container}
         initial="hidden"
         animate="visible"
-        className="max-w-5xl mx-auto space-y-20"
+        className="max-w-5xl mx-auto space-y-20 mt-16"
       >
         {/* EXPERIENCE */}
         <motion.section variants={container}>
-          <h2 className="font-mono text-2xl text-green-400 mb-8">
+          <h2 className="font-mono text-2xl text-[var(--brand-primary)] mb-8">
             {translate("resume.experience")}
           </h2>
 
@@ -56,19 +57,26 @@ export default function ResumeScreen() {
               <div
                 key={exp.role}
                 className="
-                  border border-green-500/20
-                  bg-black/70 backdrop-blur-md
-                  rounded-lg p-6
+                  border border-[var(--border-primary)]
+                  bg-[var(--bg-secondary)]
+                  rounded-xl
+                  p-6
+                  transition-all duration-300
+                  hover:border-[var(--brand-primary)]
                 "
               >
-                <div className="flex flex-col md:flex-row md:justify-between mb-2">
-                  <h3 className="text-lg font-mono text-green-300">
+                <div className="flex flex-col md:flex-row md:justify-between mb-3">
+                  <h3 className="text-lg font-mono text-[var(--brand-primary)]">
                     {exp.role}
                   </h3>
-                  <span className="text-sm text-gray-500">{exp.period}</span>
+                  <span className="text-sm text-[var(--text-muted)]">
+                    {exp.period}
+                  </span>
                 </div>
 
-                <p className="text-gray-300">{exp.description}</p>
+                <p className="text-[var(--text-secondary)] leading-relaxed">
+                  {exp.description}
+                </p>
               </div>
             ))}
           </div>
@@ -76,7 +84,7 @@ export default function ResumeScreen() {
 
         {/* SKILLS */}
         <motion.section variants={container}>
-          <h2 className="font-mono text-2xl text-green-400 mb-8">
+          <h2 className="font-mono text-2xl text-[var(--brand-primary)] mb-8">
             {translate("resume.skills")}
           </h2>
 
@@ -85,12 +93,18 @@ export default function ResumeScreen() {
               <div
                 key={category}
                 className="
-                  border border-green-500/20
-                  bg-black/70 backdrop-blur-md
-                  rounded-lg p-6
+                  border border-[var(--border-primary)]
+                  bg-[var(--bg-secondary)]
+                  rounded-xl
+                  p-6
+                  transition-all duration-300
+                  hover:border-[var(--brand-primary)]
                 "
               >
-                <h3 className="mb-4 text-green-300 font-mono">{category}</h3>
+                <h3 className="mb-4 text-[var(--brand-primary)] font-mono">
+                  {category}
+                </h3>
+
                 <ul className="flex flex-wrap gap-2">
                   {items.map((skill) => (
                     <li
@@ -98,9 +112,10 @@ export default function ResumeScreen() {
                       className="
                         px-3 py-1
                         text-xs font-mono
-                        border border-green-500/30
-                        rounded
-                        text-green-300
+                        border border-[var(--border-primary)]
+                        rounded-md
+                        bg-[var(--bg-tertiary)]
+                        text-[var(--text-secondary)]
                       "
                     >
                       {skill}
@@ -119,10 +134,12 @@ export default function ResumeScreen() {
             className="
               inline-flex items-center gap-2
               px-10 py-4
-              border border-[var(--primary-color)]
-              text-[var(--primary-color)] font-mono
-              hover:bg-[var(--primary-color)]
-              hover:text-black
+              rounded-md
+              border border-[var(--brand-primary)]
+              text-[var(--brand-primary)]
+              font-mono
+              hover:bg-[var(--brand-primary)]
+              hover:text-white
               transition-all duration-300
             "
           >

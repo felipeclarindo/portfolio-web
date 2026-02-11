@@ -8,6 +8,11 @@
   },
 
   "home": {
+    "headline": {
+      "engineering": "Engineering of",
+      "scalableDigitalSystems": "Scalable Digital Systems",
+      "thatDriveRealBusinessGrowth": "That Drive Real Business Growth"
+    },
     "apresentation": "I'm",
     "name": "Felipe Clarindo",
     "description": "a full stack developer passionate about turning code into impactful digital experiences. Explore my journey through algorithms and design.",

@@ -15,9 +15,10 @@ export default function ContactScreen() {
         relative z-10
         min-h-screen
         px-6
-        pt-28
-        flex flex-col
-        items-center
+        pt-28 pb-24
+        flex flex-col items-center
+        text-[var(--text-primary)]
+        transition-colors
       "
     >
       {/* Decorative Grid */}
@@ -26,9 +27,9 @@ export default function ContactScreen() {
         className="
           pointer-events-none
           absolute inset-0
-          bg-[linear-gradient(to_right,rgba(0,255,140,0.05)_1px,transparent_1px)]
+          bg-[linear-gradient(to_right,var(--border-primary)_1px,transparent_1px)]
           bg-[size:48px_48px]
-          opacity-20
+          opacity-10
         "
       />
 
@@ -49,40 +50,73 @@ export default function ContactScreen() {
           className="
             mx-auto
             w-full max-w-xl
-            border border-gray-700
-            bg-black/40
-            backdrop-blur
+            border border-[var(--border-primary)]
+            bg-[var(--bg-secondary)]
+            rounded-xl
             p-8
             font-mono
             text-left
+            transition-all duration-300
+            hover:border-[var(--brand-primary)]
           "
         >
-          <p className="text-gray-400 mb-4">
-            <span className="text-[var(--primary-color)]">$</span>{" "}
+          <p className="text-[var(--text-secondary)] mb-6">
+            <span className="text-[var(--brand-primary)]">$</span>{" "}
             {translate("contact.prompt")}
           </p>
 
-          <ul className="space-y-3 text-gray-300">
+          <ul className="space-y-4 text-[var(--text-secondary)]">
             <li>
-              <span className="text-[var(--primary-color)]">email:</span>{" "}
-              contato.felipeclarindo@gmail.com
+              <span className="text-[var(--brand-primary)]">email:</span>{" "}
+              <a
+                href="mailto:contato.felipeclarindo@gmail.com"
+                className="hover:text-[var(--brand-primary)] transition-colors"
+              >
+                contato.felipeclarindo@gmail.com
+              </a>
             </li>
+
             <li>
-              <span className="text-[var(--primary-color)]">github:</span>{" "}
-              <Link target="_blank" href="https://github.com/felipeclarindo">
+              <span className="text-[var(--brand-primary)]">github:</span>{" "}
+              <Link
+                target="_blank"
+                href="https://github.com/felipeclarindo"
+                className="hover:text-[var(--brand-primary)] transition-colors"
+              >
                 github.com/felipeclarindo
               </Link>
             </li>
+
             <li>
-              <span className="text-[var(--primary-color)]">linkedin:</span>{" "}
+              <span className="text-[var(--brand-primary)]">linkedin:</span>{" "}
               <Link
                 target="_blank"
                 href="https://linkedin.com/in/felipeclarindo"
+                className="hover:text-[var(--brand-primary)] transition-colors"
               >
                 linkedin.com/in/felipeclarindo
               </Link>
             </li>
           </ul>
+
+          {/* CTA */}
+          <div className="mt-10 text-center">
+            <Link
+              href="/services"
+              className="
+                inline-flex items-center gap-2
+                px-8 py-3
+                rounded-md
+                border border-[var(--brand-primary)]
+                text-[var(--brand-primary)]
+                hover:bg-[var(--brand-primary)]
+                hover:text-white
+                transition-all duration-300
+              "
+            >
+              View my services →
+            </Link>
+          </div>
         </motion.div>
       </motion.div>
     </section>

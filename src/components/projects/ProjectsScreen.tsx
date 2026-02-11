@@ -33,14 +33,15 @@ export default function ProjectsScreen() {
   const { translate } = useLanguage();
 
   return (
-    <section className="relative z-10 min-h-screen px-6 pt-28 pb-24">
+    <section className="relative z-10 min-h-screen px-6 pt-28 pb-24 text-[var(--text-primary)] transition-colors">
+
       <Introduction
         text={translate("projects.title")}
         description={translate("projects.description")}
       />
 
       {/* Project List */}
-      <div className="max-w-5xl mx-auto space-y-10">
+      <div className="max-w-5xl mx-auto space-y-10 mt-16">
         {projects.map((project, index) => (
           <motion.article
             key={project.title}
@@ -49,25 +50,26 @@ export default function ProjectsScreen() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.05 }}
             className="
-              group
-              relative
-              border border-green-500/20
-              bg-black/70 backdrop-blur-md
-              rounded-lg
+              group relative
+              border border-[var(--border-primary)]
+              bg-[var(--bg-secondary)]
+              rounded-xl
               p-8
-              transition-all
-              hover:border-green-400
+              transition-all duration-300
+              hover:border-[var(--brand-primary)]
             "
           >
             {/* Header */}
             <header className="mb-4">
-              <h2 className="font-mono text-2xl text-green-400">
+              <h2 className="font-mono text-2xl text-[var(--brand-primary)]">
                 {project.title}
               </h2>
             </header>
 
             {/* Description */}
-            <p className="text-gray-300 mb-6">{project.description}</p>
+            <p className="text-[var(--text-secondary)] mb-6 leading-relaxed">
+              {project.description}
+            </p>
 
             {/* Stack */}
             <ul className="flex flex-wrap gap-3 mb-6">
@@ -77,9 +79,11 @@ export default function ProjectsScreen() {
                   className="
                     px-3 py-1
                     text-xs font-mono
-                    border border-green-500/30
-                    rounded
-                    text-green-300
+                    border border-[var(--border-primary)]
+                    rounded-md
+                    bg-[var(--bg-tertiary)]
+                    text-[var(--text-secondary)]
+                    transition
                   "
                 >
                   {tech}
@@ -92,15 +96,16 @@ export default function ProjectsScreen() {
               href={project.link}
               className="
                 inline-flex items-center gap-2
-                text-green-400 font-mono
-                hover:text-green-300
-                transition
+                text-[var(--brand-primary)]
+                font-mono
+                hover:text-[var(--brand-primary-hover)]
+                transition-colors
               "
             >
               View project →
             </Link>
 
-            {/* Hover glow */}
+            {/* Hover Glow */}
             <span
               aria-hidden
               className="
@@ -108,8 +113,8 @@ export default function ProjectsScreen() {
                 absolute inset-0
                 opacity-0
                 group-hover:opacity-100
-                transition
-                bg-[radial-gradient(circle_at_top_left,rgba(0,255,140,0.08),transparent_60%)]
+                transition duration-500
+                bg-[radial-gradient(circle_at_top_left,var(--brand-primary)/10,transparent_60%)]
               "
             />
           </motion.article>
@@ -123,10 +128,12 @@ export default function ProjectsScreen() {
           className="
             inline-flex items-center gap-2
             px-10 py-4
-            border border-[var(--primary-color)]
-            text-[var(--primary-color)] font-mono
-            hover:bg-[var(--primary-color)]
-            hover:text-black
+            rounded-md
+            border border-[var(--brand-primary)]
+            text-[var(--brand-primary)]
+            font-mono
+            hover:bg-[var(--brand-primary)]
+            hover:text-white
             transition-all duration-300
           "
         >

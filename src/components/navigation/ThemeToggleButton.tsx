@@ -13,29 +13,35 @@ export default function ThemeToggleButton() {
     setMounted(true);
   }, []);
 
-  if (!mounted) {
-    return null;
-  }
+  if (!mounted) return null;
 
   const isDark = theme === "dark";
 
   return (
     <motion.button
-      whileTap={{ scale: 0.95 }}
+      whileTap={{ scale: 0.96 }}
       onClick={() => setTheme(isDark ? "light" : "dark")}
       className="
         flex items-center justify-center
         w-9 h-9
-        border border-green-500/30
-        rounded-sm
-        text-green-400
-        hover:text-green-300
-        hover:border-green-400
-        transition-all
+        rounded-md
+        border border-[var(--border-primary)]
+        bg-[var(--bg-tertiary)]
+        text-[var(--text-secondary)]
+        hover:bg-[var(--brand-primary)]
+        hover:text-white
+        transition-all duration-300
       "
       aria-label="Toggle theme"
     >
-      {isDark ? <Sun size={16} /> : <Moon size={16} />}
+      <motion.div
+        key={theme}
+        initial={{ rotate: -90, opacity: 0 }}
+        animate={{ rotate: 0, opacity: 1 }}
+        transition={{ duration: 0.25 }}
+      >
+        {isDark ? <Sun size={16} /> : <Moon size={16} />}
+      </motion.div>
     </motion.button>
   );
 }

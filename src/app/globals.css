@@ -1,11 +1,30 @@
 @import "tailwindcss";
 
-/* Variables */
+/* Light Theme */
 :root {
-  --primary-color: oklch(0.723 0.219 149.579);
-  --secondary-color: #000000;
-  --thirty-color: #ffffff;
-  --fourty-color: #99a1af;
+  /* === Backgrounds === */
+  --bg-primary: #F8FAFC;
+  --bg-secondary: #FFFFFF;
+  --bg-tertiary: #F1F5F9;
+
+  /* === Text === */
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #94A3B8;
+
+  /* === Brand / Accent === */
+  --brand-primary: #2563EB;
+  --brand-primary-hover: #1D4ED8;
+  --brand-soft: #DBEAFE;
+
+  /* === Borders === */
+  --border-primary: #E2E8F0;
+  --border-secondary: #CBD5E1;
+
+  /* === Status (futuro) === */
+  --success: #10B981;
+  --warning: #F59E0B;
+  --danger: #EF4444;
 }
 
 html,
@@ -14,7 +33,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #000000;
+  background-color: var(--background-color);
 }
 
 body {
@@ -25,9 +44,29 @@ body {
 
 /* Dark Theme */
 .dark {
-  --primary-color: oklch(0.723 0.219 149.579);
-  --secondary-color: #ffffff;
-  --thirty-color: #000000;
+  /* === Backgrounds === */
+  --bg-primary: #0B1220;
+  --bg-secondary: #111827;
+  --bg-tertiary: #1F2937;
+
+  /* === Text === */
+  --text-primary: #F8FAFC;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
+
+  /* === Brand / Accent === */
+  --brand-primary: #3B82F6;
+  --brand-primary-hover: #2563EB;
+  --brand-soft: #1E3A8A;
+
+  /* === Borders === */
+  --border-primary: #1F2937;
+  --border-secondary: #334155;
+
+  /* === Status */
+  --success: #34D399;
+  --warning: #FBBF24;
+  --danger: #F87171;
 }
 
 /* Efeito GLitch */
@@ -47,12 +86,12 @@ body {
 }
 
 .glitch-text::before {
-  color: #00ff88;
+  color: var(--text-color);
   transform: translate(-1px, 0);
 }
 
 .glitch-text::after {
-  color: #00cc66;
+  color: var(--primary-color);
   transform: translate(1px, 0);
 }
 

@@ -18,7 +18,8 @@ export default function AnimatedBackground() {
 
   return (
     <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-      {/* INITIAL DARK OVERLAY (impact start) */}
+
+      {/* Initial Fade Overlay */}
       <motion.div
         initial={{ opacity: 1 }}
         animate={{ opacity: 0 }}
@@ -26,67 +27,64 @@ export default function AnimatedBackground() {
         className="absolute inset-0 bg-black"
       />
 
-      {/* GLOW */}
+      {/* Glow */}
       <motion.div
-        initial={{
-          opacity: 0,
-          scale: 0.9,
-        }}
+        initial={{ opacity: 0, scale: 0.9 }}
         animate={{
-          opacity: isDark ? 0.12 : 0.18,
+          opacity: isDark ? 0.18 : 0.12,
           scale: [1, 1.05, 1],
         }}
         transition={{
-          opacity: { duration: 1.4, ease: "easeOut" },
+          opacity: { duration: 1.4 },
           scale: {
             duration: 12,
             repeat: Infinity,
             ease: "easeInOut",
           },
         }}
-        className={`
+        className="
           absolute top-1/2 left-1/2
           -translate-x-1/2 -translate-y-1/2
           w-[900px] h-[900px]
           rounded-full blur-[220px]
-          ${isDark ? "bg-[var(--primary-color)]" : "bg-emerald-400"}
-        `}
+          bg-[var(--brand-primary)]
+        "
       />
 
       {/* GRID */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{
-          opacity: isDark ? 0.25 : 0.15,
+          opacity: isDark ? 0.15 : 0.08,
           backgroundPosition: ["0px 0px", "48px 48px"],
         }}
         transition={{
           opacity: { duration: 1.2, delay: 0.3 },
           backgroundPosition: {
-            duration: 20,
+            duration: 25,
             repeat: Infinity,
             ease: "linear",
           },
         }}
         className="
           absolute inset-0
-          bg-[linear-gradient(to_right,rgba(0,255,140,0.06)_1px,transparent_1px),
-              linear-gradient(to_bottom,rgba(0,255,140,0.06)_1px,transparent_1px)]
+          bg-[linear-gradient(to_right,var(--border-secondary)_1px,transparent_1px),
+              linear-gradient(to_bottom,var(--border-secondary)_1px,transparent_1px)]
           bg-[size:48px_48px]
         "
       />
 
-      {/* DATA STREAMS – vertical flow */}
+      {/* Vertical Data Flow */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{
-          opacity: isDark ? 0.2 : 0.1,
+          opacity: isDark ? 0.1 : 0.05,
           backgroundPositionY: ["0%", "100%"],
         }}
         transition={{
           opacity: { duration: 1, delay: 0.6 },
           backgroundPositionY: {
-            duration: 18,
+            duration: 20,
             repeat: Infinity,
             ease: "linear",
           },
@@ -96,26 +94,26 @@ export default function AnimatedBackground() {
           bg-[linear-gradient(
             to_bottom,
             transparent 0%,
-            rgba(0,255,140,0.1) 20%,
+            var(--brand-soft) 20%,
             transparent 45%,
-            rgba(0,255,140,0.1) 70%,
+            var(--brand-soft) 70%,
             transparent 100%
           )]
           bg-[size:100%_220%]
         "
       />
 
-      {/* DATA STREAMS – diagonal flow */}
+      {/* Diagonal Flow */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{
-          opacity: isDark ? 0.14 : 0.08,
+          opacity: isDark ? 0.08 : 0.04,
           backgroundPositionX: ["0%", "100%"],
         }}
         transition={{
           opacity: { duration: 1, delay: 0.9 },
           backgroundPositionX: {
-            duration: 30,
+            duration: 35,
             repeat: Infinity,
             ease: "linear",
           },
@@ -125,22 +123,22 @@ export default function AnimatedBackground() {
           bg-[linear-gradient(
             120deg,
             transparent 0%,
-            rgba(0,255,140,0.08) 30%,
+            var(--brand-soft) 30%,
             transparent 55%,
-            rgba(0,255,140,0.08) 80%,
+            var(--brand-soft) 80%,
             transparent 100%
           )]
           bg-[size:220%_100%]
         "
       />
 
-      {/* NOISE */}
+      {/* Noise Texture */}
       <div
         aria-hidden
         className="
           absolute inset-0
           bg-[url('/noise.png')]
-          opacity-[0.035]
+          opacity-[0.03]
         "
       />
     </div>

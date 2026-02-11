@@ -34,8 +34,10 @@ const services = [
 
 export default function ServicesScreen() {
   const { translate } = useLanguage();
+
   return (
-    <section className="relative z-10 min-h-screen px-6 pt-28 pb-24">
+    <section className="relative z-10 min-h-screen px-6 pt-28 pb-24 text-[var(--text-primary)] transition-colors">
+
       <Introduction
         text={translate("services.title")}
         description={translate("services.description")}
@@ -45,11 +47,11 @@ export default function ServicesScreen() {
         variants={container}
         initial="hidden"
         animate="visible"
-        className="max-w-6xl mx-auto space-y-24"
+        className="max-w-6xl mx-auto space-y-24 mt-16"
       >
         {/* SERVICES */}
         <motion.section variants={container}>
-          <h2 className="font-mono text-2xl text-green-400 mb-10">
+          <h2 className="font-mono text-2xl text-[var(--brand-primary)] mb-10">
             What I offer
           </h2>
 
@@ -59,16 +61,21 @@ export default function ServicesScreen() {
                 key={service.title}
                 whileHover={{ y: -4 }}
                 className="
-                  border border-green-500/20
-                  bg-black/70 backdrop-blur-md
-                  rounded-lg p-8
-                  transition-all
+                  border border-[var(--border-primary)]
+                  bg-[var(--bg-secondary)]
+                  rounded-xl p-8
+                  transition-all duration-300
+                  hover:border-[var(--brand-primary)]
                 "
               >
-                <h3 className="font-mono text-xl text-green-300 mb-4">
+                <h3 className="font-mono text-xl text-[var(--brand-primary)] mb-4">
                   {service.title}
                 </h3>
-                <p className="text-gray-300 mb-6">{service.description}</p>
+
+                <p className="text-[var(--text-secondary)] mb-6 leading-relaxed">
+                  {service.description}
+                </p>
+
                 <ul className="flex flex-wrap gap-2">
                   {service.stack.map((tech) => (
                     <li
@@ -76,9 +83,10 @@ export default function ServicesScreen() {
                       className="
                         px-3 py-1
                         text-xs font-mono
-                        border border-green-500/30
-                        rounded
-                        text-green-300
+                        border border-[var(--border-primary)]
+                        rounded-md
+                        bg-[var(--bg-tertiary)]
+                        text-[var(--text-secondary)]
                       "
                     >
                       {tech}
@@ -92,7 +100,7 @@ export default function ServicesScreen() {
 
         {/* PROCESS */}
         <motion.section variants={container}>
-          <h2 className="font-mono text-2xl text-green-400 mb-10">
+          <h2 className="font-mono text-2xl text-[var(--brand-primary)] mb-10">
             How it works
           </h2>
 
@@ -106,16 +114,21 @@ export default function ServicesScreen() {
               <div
                 key={step}
                 className="
-                  border border-green-500/20
-                  bg-black/70 backdrop-blur-md
-                  rounded-lg p-6
+                  border border-[var(--border-primary)]
+                  bg-[var(--bg-secondary)]
+                  rounded-xl p-6
                   text-center
+                  transition-all duration-300
+                  hover:border-[var(--brand-primary)]
                 "
               >
-                <span className="block mb-2 text-green-400 font-mono">
+                <span className="block mb-3 text-[var(--brand-primary)] font-mono">
                   Step {index + 1}
                 </span>
-                <p className="text-gray-300">{step}</p>
+
+                <p className="text-[var(--text-secondary)]">
+                  {step}
+                </p>
               </div>
             ))}
           </div>
@@ -123,16 +136,16 @@ export default function ServicesScreen() {
 
         {/* REQUEST FORM */}
         <motion.section variants={container}>
-          <h2 className="font-mono text-2xl text-green-400 mb-10 text-center">
+          <h2 className="font-mono text-2xl text-[var(--brand-primary)] mb-10 text-center">
             Request a service
           </h2>
 
           <form
             className="
               max-w-3xl mx-auto
-              border border-green-500/20
-              bg-black/70 backdrop-blur-md
-              rounded-lg p-8
+              border border-[var(--border-primary)]
+              bg-[var(--bg-secondary)]
+              rounded-xl p-8
               space-y-6
             "
           >
@@ -140,10 +153,15 @@ export default function ServicesScreen() {
               type="text"
               placeholder="Your name"
               className="
-                w-full bg-black border border-green-500/30
-                rounded px-4 py-3
-                text-green-300 font-mono
-                focus:outline-none focus:border-green-400
+                w-full
+                bg-[var(--bg-tertiary)]
+                border border-[var(--border-primary)]
+                rounded-md px-4 py-3
+                text-[var(--text-primary)]
+                font-mono
+                focus:outline-none
+                focus:border-[var(--brand-primary)]
+                transition
               "
             />
 
@@ -151,19 +169,29 @@ export default function ServicesScreen() {
               type="email"
               placeholder="Your email"
               className="
-                w-full bg-black border border-green-500/30
-                rounded px-4 py-3
-                text-green-300 font-mono
-                focus:outline-none focus:border-green-400
+                w-full
+                bg-[var(--bg-tertiary)]
+                border border-[var(--border-primary)]
+                rounded-md px-4 py-3
+                text-[var(--text-primary)]
+                font-mono
+                focus:outline-none
+                focus:border-[var(--brand-primary)]
+                transition
               "
             />
 
             <select
               className="
-                w-full bg-black border border-green-500/30
-                rounded px-4 py-3
-                text-green-300 font-mono
-                focus:outline-none focus:border-green-400
+                w-full
+                bg-[var(--bg-tertiary)]
+                border border-[var(--border-primary)]
+                rounded-md px-4 py-3
+                text-[var(--text-primary)]
+                font-mono
+                focus:outline-none
+                focus:border-[var(--brand-primary)]
+                transition
               "
             >
               <option>Select a service</option>
@@ -176,10 +204,15 @@ export default function ServicesScreen() {
               placeholder="Describe your project"
               rows={4}
               className="
-                w-full bg-black border border-green-500/30
-                rounded px-4 py-3
-                text-green-300 font-mono
-                focus:outline-none focus:border-green-400
+                w-full
+                bg-[var(--bg-tertiary)]
+                border border-[var(--border-primary)]
+                rounded-md px-4 py-3
+                text-[var(--text-primary)]
+                font-mono
+                focus:outline-none
+                focus:border-[var(--brand-primary)]
+                transition
               "
             />
 
@@ -188,11 +221,12 @@ export default function ServicesScreen() {
               className="
                 w-full
                 py-3
-                border border-[var(--primary-color)]
-                text-[var(--primary-color)] font-mono
-                hover:bg-[var(--primary-color)]
-                hover:text-black
+                rounded-md
+                bg-[var(--brand-primary)]
+                text-white
+                hover:bg-[var(--brand-primary-hover)]
                 transition-all duration-300
+                font-mono
               "
             >
               Send request →

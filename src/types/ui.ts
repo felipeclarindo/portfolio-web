@@ -1,7 +1,7 @@
 // Texts
 export type IntroductionProps = {
   text: string;
-  description: string;
+  description: string | React.ReactNode;
 };
 
 // Footer
@@ -10,3 +10,9 @@ export type FooterLinkProps = {
   text: string;
   linkRapido?: boolean;
 };
+
+export type SocialIconProps = {
+  href: string;
+  label: string;
+  children: React.ReactNode;
+}
