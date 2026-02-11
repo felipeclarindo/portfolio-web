@@ -1,3 +1,7 @@
-export default function Home() {
-  return <div></div>;
+"use client";
+
+import HomeScreen from "@/components/home/HomeScreen";
+
+export default function HomePage() {
+  return <HomeScreen />;
 }

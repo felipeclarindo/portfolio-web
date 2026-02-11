@@ -1,0 +1,138 @@
+{
+  "header": {
+    "home": "Início",
+    "projects": "Projetos",
+    "resume": "Resumo",
+    "contact": "Contato",
+    "services": "Serviços"
+  },
+
+  "home": {
+    "apresentation": "Sou",
+    "name": "Felipe Clarindo",
+    "description": "um desenvolvedor full stack apaixonado por transformar código em experiências digitais impactantes. Explore minha jornada através de algoritmos e design.",
+    "seeMyWork": "Veja Meu Trabalho",
+    "contact": "Contato"
+  },
+
+  "projects": {
+    "title": "Projetos",
+    "description": "Projetos desenvolvidos com foco em engenharia, performance e experiência do usuário. Cada projeto resolve um problema real.",
+    "seeMyServices": "Veja Meus Serviços"
+  },
+
+  "resume": {
+    "title": "Resumo",
+    "description": "Experiência profissional, habilidades e formação técnica focadas na construção de sistemas confiáveis e escaláveis.",
+    "experience": "Experiencia",
+    "education": "Educação",
+    "skills": "Habilidades",
+    "discoverMyServices": "Conheça Meus Serviços"
+  },
+
+  "services": {
+    "title": "Serviços",
+    "description": "Eu ajudo empresas e indivíduos a construir soluções digitais confiáveis, escaláveis e eficientes usando tecnologias modernas."
+  },
+
+  "contact": {
+    "title": "Contato",
+    "description": "Vamos conversar sobre ideias, projetos ou oportunidades.",
+    "prompt": "formas de contato disponíveis"
+  },
+
+  "termsOfUse": {
+    "title": "Termos de Uso",
+    "introduction": "Ao acessar e utilizar este site, você concorda em cumprir os termos descritos abaixo.",
+    "section1": {
+      "title": "Acesso ao Site",
+      "content": "O acesso a este site é fornecido apenas para fins pessoais e informativos."
+    },
+    "section2": {
+      "title": "Responsabilidades do Usuário",
+      "content": "Você concorda em não utilizar o site de forma indevida ou tentar comprometer seu funcionamento."
+    },
+    "section3": {
+      "title": "Precisão do Conteúdo",
+      "content": "Embora nos esforcemos para manter as informações atualizadas, não garantimos total precisão ou atualidade."
+    },
+    "section4": {
+      "title": "Disponibilidade",
+      "content": "O site pode ficar temporariamente indisponível devido a manutenção ou problemas técnicos."
+    },
+    "section5": {
+      "title": "Modificações",
+      "content": "Estes Termos de Uso podem ser alterados a qualquer momento, sem aviso prévio."
+    },
+    "lastUpdate": "Última atualização: Fevereiro de 2026"
+  },
+
+  "termsOfService": {
+    "title": "Termos de Serviço",
+    "introduction": "Ao acessar este site, você concorda com os termos e condições descritos abaixo.",
+    "section1": {
+      "title": "Uso do Site",
+      "content": "Você concorda em utilizar este site apenas para fins legais e de forma que não infrinja direitos de terceiros."
+    },
+    "section2": {
+      "title": "Propriedade Intelectual",
+      "content": "Todo o conteúdo deste site é de propriedade intelectual do autor, salvo indicação em contrário."
+    },
+    "section3": {
+      "title": "Limitação de Responsabilidade",
+      "content": "O autor não se responsabiliza por quaisquer danos decorrentes do uso ou impossibilidade de uso deste site."
+    },
+    "section4": {
+      "title": "Links Externos",
+      "content": "Este site pode conter links para sites externos. O autor não se responsabiliza por seus conteúdos."
+    },
+    "section5": {
+      "title": "Alterações nos Termos",
+      "content": "Estes termos podem ser atualizados a qualquer momento, sem aviso prévio."
+    },
+    "lastUpdate": "Última atualização: Fevereiro de 2026"
+  },
+
+  "privacyPolicy": {
+    "title": "Política de Privacidade",
+    "introduction": "A sua privacidade é importante para nós. Esta Política de Privacidade explica como as informações são coletadas, utilizadas e protegidas ao acessar este site.",
+    "section1": {
+      "title": "Informações Coletadas",
+      "content": "Podemos coletar informações pessoais como nome, e-mail e dados de uso quando você interage com o site."
+    },
+    "section2": {
+      "title": "Uso das Informações",
+      "content": "As informações coletadas são utilizadas para melhorar a experiência do usuário, responder solicitações e aprimorar as funcionalidades do site."
+    },
+    "section3": {
+      "title": "Compartilhamento de Dados",
+      "content": "Não vendemos, trocamos ou alugamos informações pessoais dos usuários para terceiros."
+    },
+    "section4": {
+      "title": "Segurança dos Dados",
+      "content": "Adotamos práticas adequadas de coleta, armazenamento e processamento para proteger suas informações pessoais."
+    },
+    "section5": {
+      "title": "Alterações nesta Política",
+      "content": "Esta Política de Privacidade pode ser atualizada a qualquer momento. As alterações serão refletidas nesta página."
+    },
+    "lastUpdate": "Última atualização: Fevereiro de 2026"
+  },
+
+  "footer": {
+    "sectionOne": {
+      "first": "Inicio",
+      "second": "Projetos",
+      "third": "Currículo",
+      "fourth": "Contato"
+    },
+    "sectionTwo": {
+      "first": "Termos de Serviço",
+      "second": "Termos de Uso",
+      "third": "Política de Privacidade",
+      "fourth": "Política de Cookies"
+    },
+    "rightsReserved": "Todos os direitos reservados.",
+    "language": "Idioma"
+  }
+}

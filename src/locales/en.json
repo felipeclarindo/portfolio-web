@@ -1,0 +1,138 @@
+{
+  "header": {
+    "home": "Home",
+    "projects": "Projects",
+    "resume": "Resume",
+    "contact": "Contact",
+    "services": "Services"
+  },
+
+  "home": {
+    "apresentation": "I'm",
+    "name": "Felipe Clarindo",
+    "description": "a full stack developer passionate about turning code into impactful digital experiences. Explore my journey through algorithms and design.",
+    "seeMyWork": "See My Work",
+    "contact": "Contact"
+  },
+
+  "projects": {
+    "title": "Projects",
+    "description": "Project developed with a focus on engineering, performance, and user experience. Each project solves a real problem.",
+    "seeMyServices": "See My Services"
+  },
+
+  "resume": {
+    "title": "Resume",
+    "description": "Professional experience, skills and technical background focused on building reliable and scalable systems.",
+    "experience": "Experience",
+    "education": "Education",
+    "skills": "Skills",
+    "discoverMyServices": "Discover My Services"
+  },
+
+  "services": {
+    "title": "Services",
+    "description": "I help businesses and individuals build reliable, scalable and efficient digital solutions using modern technologies."
+  },
+
+  "contact": {
+    "title": "Contact",
+    "description": "Let’s talk about ideas, projects, or opportunities.",
+    "prompt": "available contact methods"
+  },
+
+  "termsOfUse": {
+    "title": "Terms of Use",
+    "introduction": "By accessing and using this website, you agree to comply with the terms described below.",
+    "section1": {
+      "title": "Website Access",
+      "content": "Access to this website is provided for personal and informational purposes only."
+    },
+    "section2": {
+      "title": "User Responsibilities",
+      "content": "You agree not to misuse the website or attempt to disrupt its functionality."
+    },
+    "section3": {
+      "title": "Content Accuracy",
+      "content": "While we strive to keep information accurate, we do not guarantee completeness or timeliness."
+    },
+    "section4": {
+      "title": "Availability",
+      "content": "The website may be unavailable temporarily due to maintenance or technical issues."
+    },
+    "section5": {
+      "title": "Modifications",
+      "content": "These Terms of Use may be modified at any time without prior notice."
+    },
+    "lastUpdate": "Last updated: February 2026"
+  },
+
+  "termsOfService": {
+    "title": "Terms of Service",
+    "introduction": "By accessing this website, you agree to be bound by the terms and conditions described below.",
+    "section1": {
+      "title": "Use of the Website",
+      "content": "You agree to use this website only for lawful purposes and in a way that does not infringe the rights of others."
+    },
+    "section2": {
+      "title": "Intellectual Property",
+      "content": "All content on this website is the intellectual property of the author unless otherwise stated."
+    },
+    "section3": {
+      "title": "Limitation of Liability",
+      "content": "The author shall not be liable for any damages arising from the use or inability to use this website."
+    },
+    "section4": {
+      "title": "External Links",
+      "content": "This website may contain links to external sites. The author is not responsible for their content."
+    },
+    "section5": {
+      "title": "Changes to Terms",
+      "content": "These terms may be updated at any time without prior notice."
+    },
+    "lastUpdate": "Last updated: February 2026"
+  },
+
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "introduction": "Your privacy is important to us. This Privacy Policy explains how information is collected, used, and protected when you access this website.",
+    "section1": {
+      "title": "Information We Collect",
+      "content": "We may collect personal information such as name, email address, and usage data when you interact with the website."
+    },
+    "section2": {
+      "title": "How We Use Your Information",
+      "content": "The collected information is used to improve user experience, respond to inquiries, and enhance website functionality."
+    },
+    "section3": {
+      "title": "Data Sharing",
+      "content": "We do not sell, trade, or rent users’ personal identification information to others."
+    },
+    "section4": {
+      "title": "Data Security",
+      "content": "We adopt appropriate data collection, storage, and processing practices to protect your personal information."
+    },
+    "section5": {
+      "title": "Changes to This Policy",
+      "content": "This Privacy Policy may be updated at any time. Changes will be reflected on this page."
+    },
+    "lastUpdate": "Last updated: February 2026"
+  },
+
+  "footer": {
+    "sectionOne": {
+      "first": "Home",
+      "second": "Projects",
+      "third": "Resumer",
+      "fourth": "Contact"
+    },
+    "sectionTwo": {
+      "first": "Terms of Service",
+      "second": "Terms of Use",
+      "third": "Privacy Policy",
+      "fourth": "Cookie Policy"
+    },
+    "rightsReserved": "All rights reserved.",
+    "language": "Language"
+  }
+}
