@@ -17,6 +17,9 @@
     "name": "Felipe Clarindo",
     "description": "um desenvolvedor full stack apaixonado por transformar código em experiências digitais impactantes. Explore minha jornada através de algoritmos e design.",
     "seeMyWork": "Veja Meu Trabalho",
+    "stats":{
+      "title": "Estatísticas e Conquistas"
+    },
     "contact": "Contato"
   },
 

@@ -53,7 +53,7 @@ export default function Footer() {
         {/* TERMOS */}
         <div>
           <h4 className="mb-4 text-[var(--brand-primary)] tracking-wider text-xs">
-            {">"} Legal
+            {">"} Termos
           </h4>
           <ul className="space-y-2 text-[var(--text-secondary)]">
             <FooterLink

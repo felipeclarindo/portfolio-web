@@ -16,3 +16,8 @@ export type SocialIconProps = {
   label: string;
   children: React.ReactNode;
 }
+
+export type CounterProps = {
+  from?: number;
+  to: number;
+};

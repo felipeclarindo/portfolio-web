@@ -137,8 +137,8 @@ export default function AnimatedBackground() {
         aria-hidden
         className="
           absolute inset-0
-          bg-[url('/noise.png')]
-          opacity-[0.03]
+          bg-[url('/images/noise.gif')]
+          opacity-[0.2]
         "
       />
     </div>
