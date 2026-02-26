@@ -1,0 +1,9 @@
+ALTER TABLE projects ENABLE ROW LEVEL SECURITY;
+ALTER TABLE stacks ENABLE ROW LEVEL SECURITY;
+ALTER TABLE project_stacks ENABLE ROW LEVEL SECURITY;
+
+CREATE policy "Public read projects"
+ON projects
+FOR SELECT
+TO anon
+USING (true);
