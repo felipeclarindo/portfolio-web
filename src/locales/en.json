@@ -15,12 +15,27 @@
     },
     "apresentation": "I'm",
     "name": "Felipe Clarindo",
-    "description": "a full stack developer passionate about turning code into impactful digital experiences. Explore my journey through algorithms and design.",
-    "seeMyWork": "See My Work",
-    "stats": {
-      "title": "Stats and Achievements"
+    "description": "Full Stack Developer & Data Specialist building high-performance applications, intelligent APIs and data-driven platforms with clean architecture and measurable impact..",
+    "buttonOne": "See My Work",
+    "buttonTwo": "Let's Build Together",
+    "badgesTitle": "Skills & Badges",
+    "statsTitle": "Stats & Achievements",
+    "benefits": {
+      "title": "Why work with me?",
+      "benefitOne": "Business-Oriented Development",
+      "benefitOneDescription": "Every line of code is written to generate measurable business results.",
+      "benefitTwo": "Scalable & Clean Architecture",
+      "benefitTwoDescription": "Built to grow with your company without technical debt.",
+      "benefitThree": "Performance & Optimization",
+      "benefitThreeDescription": "High-speed applications focused on user experience, SEO and conversion."
     },
-    "contact": "Contact"
+    "benefitsTitle": "Why work with me?",
+    "stats": {
+      "title": "Stats & Achievements",
+      "projectsDelivered": "Projects Delivered",
+      "recomendations": "Recomendations",
+      "yearsOfExperience": "Years of Experience"
+    }
   },
 
   "projects": {

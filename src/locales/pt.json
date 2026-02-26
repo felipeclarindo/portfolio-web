@@ -15,12 +15,26 @@
     },
     "apresentation": "Sou",
     "name": "Felipe Clarindo",
-    "description": "um desenvolvedor full stack apaixonado por transformar código em experiências digitais impactantes. Explore minha jornada através de algoritmos e design.",
-    "seeMyWork": "Veja Meu Trabalho",
-    "stats":{
-      "title": "Estatísticas e Conquistas"
+    "description": "Desenvolvedor Full Stack e especialista em dados criando aplicativos de alto desempenho, APIs inteligentes e plataformas orientadas a dados com arquitetura limpa e impacto mensurável.",
+    "buttonOne": "Veja Meu Trabalho",
+    "buttonTwo": "Vamos Construir Juntos",
+    "benefitsTitle": "Por que trabalhar comigo?",
+    "badgesTitle": "Habilidades e Certificações",
+    "benefits": {
+      "title": "Por que trabalhar comigo?",
+      "benefitOne": "Desenvolvimento Orientado ao Negócio",
+      "benefitOneDescription": "Cada linha de código é escrita para gerar resultados mensuráveis no negócio.",
+      "benefitTwo": "Arquitetura Escalável e Limpa",
+      "benefitTwoDescription": "Construído para crescer com sua empresa sem dívidas técnicas.",
+      "benefitThree": "Performance e Otimização",
+      "benefitThreeDescription": "Aplicações de alta velocidade focadas na experiência do usuário, SEO e conversão."
     },
-    "contact": "Contato"
+    "stats": {
+      "title": "Estatísticas e Conquistas",
+      "projectsDelivered": "Projetos Entregues",
+      "recomendations": "Recomendações",
+      "yearsOfExperience": "Anos de Experiência"
+    }
   },
 
   "projects": {
