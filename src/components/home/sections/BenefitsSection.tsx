@@ -1,6 +1,8 @@
+import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
 
 export default function BenefitsSection() {
+  const { translate } = useLanguage();
     return (
         
         <motion.div
@@ -11,22 +13,22 @@ export default function BenefitsSection() {
           className="pt-24 space-y-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold">
-            Why Work With Me?
+            {translate("home.benefitsTitle")}
           </h2>
 
           <div className="grid md:grid-cols-3 gap-8 text-left">
             {[
               {
-                title: "Business-Oriented Development",
-                desc: "Every line of code is written to generate measurable business results.",
+                title: translate("home.benefits.benefitOne"),
+                desc: translate("home.benefits.benefitOneDescription"),
               },
               {
-                title: "Scalable & Clean Architecture",
-                desc: "Built to grow with your company without technical debt.",
+                title: translate("home.benefits.benefitTwo"),
+                desc: translate("home.benefits.benefitTwoDescription"),
               },
               {
-                title: "Performance & Optimization",
-                desc: "High-speed applications focused on user experience and conversion.",
+                title: translate("home.benefits.benefitThree"),
+                desc: translate("home.benefits.benefitThreeDescription"),
               },
             ].map((benefit, index) => (
               <motion.div

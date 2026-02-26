@@ -1,25 +1,20 @@
+"use client"
+
 import Counter from "@/components/ui/Counter";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { BadgeProps } from "@/types/pages";
 import { motion } from "framer-motion";
 
 export default function StatsSection() {
   const { translate } = useLanguage();
-
   const stats = [
-    { number: 20, label:  "Projects Delivered", suffix: "+" },
-    { number: 4, label: "Years of Experience", suffix: "+" },
-    { number: 100, label: "Clean Architecture Focus", suffix: "%" },
+    { number: 120, label:  translate('home.stats.projectsDelivered'), suffix: "+" },
+    { number: 100, label: translate('home.stats.recomendations'), suffix: "+" },
+    { number: 4, label: translate('home.stats.yearsOfExperience'), suffix: "+" },
   ];
 
-  const badges = [
-    {
-      title: "GitHub Foundations",
-      issuer: "GitHub",
-      year: "2024",
-      description: "Certification validating Git & GitHub fundamentals, workflows, and collaboration practices.",
-    },
-  ];
-
+  const badges: BadgeProps[] = [];
+  
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -33,7 +28,6 @@ export default function StatsSection() {
         <h2 className="text-3xl md:text-4xl font-bold text-center">
           {translate("home.stats.title")}
         </h2>
-
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-10">
           {stats.map((stat) => (
             <div
@@ -61,10 +55,11 @@ export default function StatsSection() {
       </div>
 
       {/* ===== BADGES ===== */}
-      <div className="space-y-10">
-        <h2 className="text-3xl md:text-4xl font-bold text-center">
-          Certifications & Badges
-        </h2>
+      {badges.length > 0 && (
+        <div className="space-y-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-center">
+            {translate("home.badgesTitle")}
+          </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           {badges.map((badge) => (
@@ -103,6 +98,7 @@ export default function StatsSection() {
           ))}
         </div>
       </div>
+      )}
     </motion.div>
   );
 }
