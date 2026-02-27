@@ -3,6 +3,7 @@
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import InfoBlock from "./InfoBlock";
 
 const projects = {
   "energy-analytics": {
@@ -163,7 +164,7 @@ export default function ProjectScreen() {
               transition-all duration-300
             "
           >
-            Let's Build Something Together →
+            Let&apos;s Build Something Together →
           </Link>
         </div>
 

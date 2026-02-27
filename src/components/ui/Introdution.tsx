@@ -20,11 +20,10 @@ export default function Introduction({
         className="
           font-mono
           text-4xl md:text-6xl
-          text-[var(--primary-color)]
           mb-6
         "
       >
-        <span className="opacity-50">&gt;_</span>{" "}
+        <span className="text-[var(--text-primary)] opacity-80">&gt;_</span>{" "}
         <span className="relative">
           {text}
           <motion.span
@@ -44,7 +43,7 @@ export default function Introduction({
       </motion.h1>
 
       {description && (
-        <motion.p variants={item} className="text-gray-300 max-w-2xl mx-auto">
+        <motion.p variants={item} className="max-w-2xl mx-auto text-[var(--text-secondary)]">
           {description}
         </motion.p>
       )}

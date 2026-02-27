@@ -1,4 +1,4 @@
-import TermsOfServiceScreen from "@/components/terms/TermsOfServiceScreen";
+import TermsOfServiceScreen from "@/components/screens/terms-and-policy/TermsOfServiceScreen";
 
 export default function TermsOfServicePage() {
   return <TermsOfServiceScreen />;

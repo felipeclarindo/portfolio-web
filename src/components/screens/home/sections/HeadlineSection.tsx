@@ -36,7 +36,8 @@ export default function HeadlineSection() {
             </Link>
 
             <Link
-              href="/contact"
+              href="https://wa.me/5511978590137?text=Olá,%20vi%20seu%20portfolio%20e%20tenho%20interesse%20nos%20seus%20serviços!"
+              target="_blank"
               className="px-10 py-4 border border-[var(--border-primary)] bg-[var(--bg-secondary)] rounded-xl font-semibold hover:bg-[var(--bg-tertiary)] transition-all duration-300"
             >
               {translate("home.buttonTwo")}

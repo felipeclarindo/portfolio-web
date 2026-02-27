@@ -3,7 +3,7 @@
 import { container } from "@/lib/motion/motion";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Introduction from "../ui/Introdution";
+import Introduction from "../../ui/Introdution";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const experiences = [

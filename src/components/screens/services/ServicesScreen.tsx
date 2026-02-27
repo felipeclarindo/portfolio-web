@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Introduction from "../ui/Introdution";
+import Introduction from "../../ui/Introdution";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { container } from "@/lib/motion/motion";
 

@@ -3,6 +3,20 @@ import { motion } from "framer-motion";
 
 export default function BenefitsSection() {
   const { translate } = useLanguage();
+  const benefits = [
+    {
+      title: translate("home.benefits.benefitOne"),
+      desc: translate("home.benefits.benefitOneDescription"),
+    },
+    {
+      title: translate("home.benefits.benefitTwo"),
+      desc: translate("home.benefits.benefitTwoDescription"),
+    },
+    {
+      title: translate("home.benefits.benefitThree"),
+      desc: translate("home.benefits.benefitThreeDescription"),
+    }
+  ];
     return (
         
         <motion.div
@@ -16,21 +30,9 @@ export default function BenefitsSection() {
             {translate("home.benefitsTitle")}
           </h2>
 
+          {benefits.length > 0 && (
           <div className="grid md:grid-cols-3 gap-8 text-left">
-            {[
-              {
-                title: translate("home.benefits.benefitOne"),
-                desc: translate("home.benefits.benefitOneDescription"),
-              },
-              {
-                title: translate("home.benefits.benefitTwo"),
-                desc: translate("home.benefits.benefitTwoDescription"),
-              },
-              {
-                title: translate("home.benefits.benefitThree"),
-                desc: translate("home.benefits.benefitThreeDescription"),
-              },
-            ].map((benefit, index) => (
+            {benefits.map((benefit, index) => (
               <motion.div
                 key={benefit.title}
                 initial={{ opacity: 0, y: 30 }}
@@ -55,6 +57,7 @@ export default function BenefitsSection() {
               </motion.div>
             ))}
           </div>
+          )}
         </motion.div>
 
 

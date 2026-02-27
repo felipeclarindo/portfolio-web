@@ -1,4 +1,4 @@
-import PrivacyPolicyScreen from "@/components/policy/PrivacyPolicyScreen";
+import PrivacyPolicyScreen from "@/components/screens/terms-and-policy/PrivacyPolicyScreen";
 
 export default function PrivacyPolicyPage() {
   return <PrivacyPolicyScreen />;
