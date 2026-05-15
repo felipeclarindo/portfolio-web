@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import ThemeToggleButton from "../navigation/ThemeToggleButton";
 import LanguageToggleButton from "../navigation/LanguageToggleButton";
@@ -10,6 +9,7 @@ import { MenuItemProps } from "@/types/navigation";
 import { useEffect, useState } from "react";
 import { hoverGlitch } from "@/lib/motion/motion";
 import { useLanguage } from "@/contexts/LanguageContext";
+import Logo from "./Logo";
 
 export default function Header() {
   const { translate } = useLanguage();
@@ -18,9 +18,9 @@ export default function Header() {
   const navItems: MenuItemProps[] = [
     { name: translate("header.home"), path: "/" },
     { name: translate("header.projects"), path: "/projects" },
-    { name: translate("header.resume"), path: "/resume" },
+    // { name: translate("header.resume"), path: "/resume" },
     { name: translate("header.services"), path: "/services" },
-    { name: translate("header.contact"), path: "/contact" },
+    // { name: translate("header.contact"), path: "/contact" },
   ];
 
   useEffect(() => {
@@ -38,18 +38,9 @@ export default function Header() {
           transition-colors
         "
       >
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+        <div className="max-w-7xl mx-auto flex items-center justify-between py-6">
 
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <Image
-              src="/images/logo.png"
-              alt="Felipe Clarindo Logo"
-              width={40}
-              height={40}
-              priority
-            />
-          </Link>
+          <Logo keyframe="logo" height={45} width={45} />
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-10 text-sm font-mono text-[var(--text-secondary)]">

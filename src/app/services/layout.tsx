@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Serviços | Felipe Clarindo",
   description: "Serviços oferecidos por Felipe Clarindo",
   icons: {
-    icon: "/images/logo.png",
+    icon: "/images/favicon.png",
   },
 };
 

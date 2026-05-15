@@ -1,10 +1,10 @@
 "use client";
 
 import { useLanguage } from "@/contexts/LanguageContext";
-import Image from "next/image";
 import { Github, Linkedin, Instagram } from "lucide-react";
 import FooterLink from "./FooterLink";
 import SocialIcon from "./SocialIcon";
+import Logo from "./Logo";
 
 export default function Footer() {
   const { translate } = useLanguage();
@@ -65,11 +65,11 @@ export default function Footer() {
               text={translate("footer.sectionTwo.second")}
             />
             <FooterLink
-              href="/privacy-polity"
+              href="/privacy-policy"
               text={translate("footer.sectionTwo.third")}
             />
             <FooterLink
-              href="/cookies-polity"
+              href="/cookies-policy"
               text={translate("footer.sectionTwo.fourth")}
             />
           </ul>
@@ -78,13 +78,7 @@ export default function Footer() {
         {/* BRAND + SOCIAL */}
         <div className="flex flex-col text-center items-center justify-center gap-6 mx-auto">
 
-          <Image
-            src="/images/logo.png"
-            alt="Felipe Clarindo logo"
-            width={68}
-            height={68}
-            className="opacity-90"
-          />
+          <Logo height={68} width={68} />
 
           <div className="flex gap-4">
             <SocialIcon

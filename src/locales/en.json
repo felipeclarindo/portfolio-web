@@ -9,9 +9,11 @@
 
   "home": {
     "headline": {
-      "engineering": "Engineering of",
-      "scalableDigitalSystems": "Scalable Digital Systems",
-      "thatDriveRealBusinessGrowth": "That Drive Real Business Growth"
+      "whiteOne": "Achieve your",
+      "blueOne": "Digital Presence",
+      "whiteTwo": "with",
+      "blueTwo": "Scalable Systems",
+      "whiteThree": "that Drive the Growth of your Business"
     },
     "apresentation": "I'm",
     "name": "Felipe Clarindo",
@@ -41,7 +43,8 @@
   "projects": {
     "title": "Projects",
     "description": "Project developed with a focus on engineering, performance, and user experience. Each project solves a real problem.",
-    "seeMyServices": "See My Services"
+    "seeMyServices": "See My Services",
+    "noProjects": "No projects to show at the moment. Please check back later."
   },
 
   "resume": {
@@ -55,7 +58,21 @@
 
   "services": {
     "title": "Services",
-    "description": "I help businesses and individuals build reliable, scalable and efficient digital solutions using modern technologies."
+    "description": "I help businesses and individuals build reliable, scalable and efficient digital solutions using modern technologies.",
+    "subtitleOne": "What I offer",
+    "subtitleTwo": "How it works",
+    "stepsTitle": "Step",
+    "stepOneDescription": "Understanding the proble",
+    "stepTwoDescription": "Technical planning",
+    "stepThreeDescription": "Development & testing",
+    "stepFourDescription": "Delivery & support",
+    "serviceOneTitle": "Web Development",
+    "serviceOneDescription": "Modern, performant and scalable web applications using best engineering practices.",
+    "serviceTwoDescription": "Secure and well-structured APIs with focus on scalability and clean architecture.",
+    "serviceThreeTitle": "Automation & Scripts",
+    "serviceThreeDescription": "Automation of repetitive tasks, bots and scripts to improve productivity.",
+    "serviceFourTitle": "Data & Machine Learning",
+    "serviceFourDescription": "Data analysis, dashboards and predictive models for real-world problems."
   },
 
   "contact": {

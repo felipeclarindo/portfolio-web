@@ -4,40 +4,36 @@ import { motion } from "framer-motion";
 import Introduction from "../../ui/Introdution";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { container } from "@/lib/motion/motion";
-
-const services = [
-  {
-    title: "Web Development",
-    description:
-      "Modern, performant and scalable web applications using best engineering practices.",
-    stack: ["Next.js", "React", "TypeScript", "Tailwind"],
-  },
-  {
-    title: "APIs & Backend",
-    description:
-      "Secure and well-structured APIs with focus on scalability and clean architecture.",
-    stack: ["Node.js", "Python", "PostgreSQL", "Supabase"],
-  },
-  {
-    title: "Automation & Scripts",
-    description:
-      "Automation of repetitive tasks, bots and scripts to improve productivity.",
-    stack: ["Python", "Selenium", "APIs"],
-  },
-  {
-    title: "Data & Machine Learning",
-    description:
-      "Data analysis, dashboards and predictive models for real-world problems.",
-    stack: ["Python", "Pandas", "Scikit-learn"],
-  },
-];
+import { ServiceProps } from "@/types/pages";
 
 export default function ServicesScreen() {
   const { translate } = useLanguage();
 
+  const services: ServiceProps[] = [
+    {
+      title: translate("services.serviceOneTitle"),
+      description: translate("services.serviceOneDescription"),
+      stacks: ["Next.js", "React", "TypeScript", "Tailwind"],
+    },
+    {
+      title: "APIs & Backend",
+      description: translate("services.serviceTwoDescription"),
+      stacks: ["Node.js", "Python", "PostgreSQL", "Supabase", "Firebase"],
+    },
+    {
+      title: translate("services.serviceThreeTitle"),
+      description: translate("services.serviceThreeDescription"),
+      stacks: ["Python", "Selenium", "APIs", "Scrapping"],
+    },
+    {
+      title: translate("services.serviceFourTitle"),
+      description: translate("services.serviceFourDescription"),
+      stacks: ["Python", "Pandas", "Scikit-learn", "OpenCV", "yolo", "PyTorch"],
+    },
+  ];
+
   return (
     <section className="relative z-10 min-h-screen px-6 pt-28 pb-24 text-[var(--text-primary)] transition-colors">
-
       <Introduction
         text={translate("services.title")}
         description={translate("services.description")}
@@ -52,7 +48,7 @@ export default function ServicesScreen() {
         {/* SERVICES */}
         <motion.section variants={container}>
           <h2 className="font-mono text-2xl text-[var(--brand-primary)] mb-10">
-            What I offer
+            {translate("services.subtitleOne")}
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -77,7 +73,7 @@ export default function ServicesScreen() {
                 </p>
 
                 <ul className="flex flex-wrap gap-2">
-                  {service.stack.map((tech) => (
+                  {service.stacks.map((tech) => (
                     <li
                       key={tech}
                       className="
@@ -101,15 +97,15 @@ export default function ServicesScreen() {
         {/* PROCESS */}
         <motion.section variants={container}>
           <h2 className="font-mono text-2xl text-[var(--brand-primary)] mb-10">
-            How it works
+            {translate("services.subtitleTwo")}
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {[
-              "Understanding the problem",
-              "Technical planning",
-              "Development & testing",
-              "Delivery & support",
+              translate("services.stepOneDescription"),
+              translate("services.stepTwoDescription"),
+              translate("services.stepThreeDescription"),
+              translate("services.stepFourDescription"),
             ].map((step, index) => (
               <div
                 key={step}
@@ -123,12 +119,10 @@ export default function ServicesScreen() {
                 "
               >
                 <span className="block mb-3 text-[var(--brand-primary)] font-mono">
-                  Step {index + 1}
+                  {translate("services.stepsTitle")} {index + 1}
                 </span>
 
-                <p className="text-[var(--text-secondary)]">
-                  {step}
-                </p>
+                <p className="text-[var(--text-secondary)]">{step}</p>
               </div>
             ))}
           </div>

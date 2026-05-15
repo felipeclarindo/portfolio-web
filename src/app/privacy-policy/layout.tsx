@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy | Felipe Clarindo",
   description: "Privacy Policy of Felipe Clarindo Website",
   icons: {
-    icon: "/images/logo.png",
+    icon: "/images/favicon.png",
   },
 };
 

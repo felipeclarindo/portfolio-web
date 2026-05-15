@@ -9,7 +9,7 @@ import {
 } from "react";
 import pt from "@/locales/pt.json";
 import en from "@/locales/en.json";
-import { LanguageContextType, LanguageProviderProps, Locale } from "@/types";
+import { LanguageContextType, LanguageProviderProps, Locale } from "@/types/language";
 
 type Messages = typeof pt;
 
@@ -49,10 +49,12 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
   );
 }
 
-export function useLanguage() {
+export function useLanguage(): LanguageContextType {
   const context = useContext(LanguageContext);
+
   if (!context) {
     throw new Error("useLanguage must be used within LanguageProvider");
   }
+
   return context;
 }

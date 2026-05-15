@@ -1,174 +1,89 @@
-"use client";
+import { notFound } from "next/navigation";
 
-import { useParams } from "next/navigation";
-import Link from "next/link";
-import { motion } from "framer-motion";
-import InfoBlock from "./InfoBlock";
+async function getProject(id: string) {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/projects/${id}`, {
+    cache: "no-store",
+  });
 
-const projects = {
-  "energy-analytics": {
-    title: "Energy Analytics Platform",
-    description:
-      "Plataforma para análise de consumo energético com dashboards interativos e modelos preditivos.",
-    problem:
-      "Empresas tinham dificuldade em visualizar padrões de consumo energético e prever custos futuros.",
-    solution:
-      "Desenvolvimento de dashboards interativos com modelos de Machine Learning para previsão de consumo.",
-    result:
-      "Melhoria na tomada de decisão baseada em dados e redução de custos operacionais.",
-    stack: ["Next.js", "TypeScript", "Python", "Machine Learning"],
-    github: "#",
-    demo: "#",
-  },
-  "automotive-damage": {
-    title: "Automotive Damage Detection",
-    description:
-      "Sistema de visão computacional para identificar e classificar danos em veículos.",
-    problem:
-      "Processos manuais de inspeção eram lentos e imprecisos.",
-    solution:
-      "Modelo de Deep Learning para identificar e classificar danos automaticamente.",
-    result:
-      "Redução de tempo de inspeção e maior precisão nas análises.",
-    stack: ["Python", "OpenCV", "Deep Learning"],
-    github: "#",
-    demo: "#",
-  },
-  "smart-portfolio": {
-    title: "Smart Portfolio System",
-    description:
-      "Portfólio técnico com foco em performance, UX e arquitetura escalável.",
-    problem:
-      "Portfólios tradicionais não demonstram engenharia real de software.",
-    solution:
-      "Desenvolvimento com foco em performance, SEO, animações suaves e design system.",
-    result:
-      "Maior impacto visual e melhor posicionamento profissional.",
-    stack: ["Next.js", "Tailwind", "Framer Motion"],
-    github: "#",
-    demo: "#",
-  },
-};
+  if (!res.ok) return null;
 
-export default function ProjectScreen() {
-  const params = useParams();
-  const slug = params.slug as string;
+  return res.json();
+}
 
-  const project = projects[slug as keyof typeof projects];
+export default async function ProjectPage({ params }: { params: { id: string } }) {
+  const project = await getProject(params.id);
 
   if (!project) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-[var(--bg-primary)] text-[var(--text-primary)]">
-        <h1>Project not found</h1>
-      </div>
-    );
+    notFound();
   }
 
-  return (
-    <section className="min-h-screen px-6 pt-32 pb-24 bg-[var(--bg-primary)] text-[var(--text-primary)] transition-colors">
+  const video = project.projects_demos?.[0]?.url;
 
-      <div className="max-w-4xl mx-auto space-y-16">
+  return (
+    <section className="min-h-screen pt-32 pb-24 px-6 text-[var(--text-primary)]">
+
+      <div className="max-w-5xl mx-auto">
 
         {/* TITLE */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-[var(--brand-primary)]">
-              {project.title}
-            </span>
-          </h1>
+        <h1 className="text-4xl font-mono text-[var(--brand-primary)] mb-6">
+          {project.title_en}
+        </h1>
 
-          <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
-            {project.description}
-          </p>
-        </motion.div>
+        {/* DESCRIPTION */}
+        <p className="text-[var(--text-secondary)] leading-relaxed mb-10">
+          {project.description_en}
+        </p>
 
-        {/* STACK */}
-        <div>
-          <h2 className="text-xl font-semibold mb-4 text-[var(--brand-primary)]">
-            Tech Stack
-          </h2>
-
-          <div className="flex flex-wrap gap-3">
-            {project.stack.map((tech) => (
-              <span
-                key={tech}
-                className="
-                  px-4 py-2
-                  text-sm font-mono
-                  border border-[var(--border-primary)]
-                  bg-[var(--bg-secondary)]
-                  rounded-md
-                  text-[var(--text-secondary)]
-                "
-              >
-                {tech}
-              </span>
-            ))}
+        {/* VIDEO DEMO */}
+        {video && (
+          <div className="rounded-xl overflow-hidden border border-[var(--border-primary)] mb-10">
+            <video
+              controls
+              className="w-full"
+              src={video}
+            />
           </div>
+        )}
+
+        {/* STACKS */}
+        <div className="flex flex-wrap gap-3 mb-10">
+          {project.stacks?.map((stack: any) => (
+            <span
+              key={stack.id}
+              className="px-3 py-1 text-xs font-mono border border-[var(--border-primary)] rounded-md"
+            >
+              {stack.name}
+            </span>
+          ))}
         </div>
 
-        {/* PROBLEM / SOLUTION / RESULT */}
-        <div className="space-y-10">
-          <InfoBlock title="Problem" content={project.problem} />
-          <InfoBlock title="Solution" content={project.solution} />
-          <InfoBlock title="Result" content={project.result} />
-        </div>
+        {/* LINKS */}
+        <div className="flex gap-6">
 
-        {/* BUTTONS */}
-        <div className="flex flex-wrap gap-4 pt-6">
-          <Link
-            href={project.demo}
-            className="
-              px-8 py-3
-              bg-[var(--brand-primary)]
-              text-white
-              rounded-md
-              hover:bg-[var(--brand-primary-hover)]
-              transition-all duration-300
-            "
-          >
-            Live Demo
-          </Link>
+          {project.github_url && (
+            <a
+              href={project.github_url}
+              target="_blank"
+              className="border border-[var(--brand-primary)] px-6 py-3 rounded-md font-mono hover:bg-[var(--brand-primary)] hover:text-white transition"
+            >
+              GitHub
+            </a>
+          )}
 
-          <Link
-            href={project.github}
-            className="
-              px-8 py-3
-              border border-[var(--border-primary)]
-              bg-[var(--bg-secondary)]
-              text-[var(--text-primary)]
-              rounded-md
-              hover:bg-[var(--bg-tertiary)]
-              transition-all duration-300
-            "
-          >
-            View Code
-          </Link>
-        </div>
+          {project.host_url && (
+            <a
+              href={project.host_url}
+              target="_blank"
+              className="border border-[var(--border-primary)] px-6 py-3 rounded-md font-mono hover:border-[var(--brand-primary)] transition"
+            >
+              Live Demo
+            </a>
+          )}
 
-        {/* CTA FINAL */}
-        <div className="pt-16 text-center">
-          <Link
-            href="/contact"
-            className="
-              inline-flex items-center gap-2
-              px-10 py-4
-              border border-[var(--brand-primary)]
-              text-[var(--brand-primary)]
-              rounded-md
-              hover:bg-[var(--brand-primary)]
-              hover:text-white
-              transition-all duration-300
-            "
-          >
-            Let&apos;s Build Something Together →
-          </Link>
         </div>
 
       </div>
+
     </section>
   );
 }

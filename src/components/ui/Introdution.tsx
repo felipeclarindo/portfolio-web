@@ -13,7 +13,7 @@ export default function Introduction({
       variants={container}
       initial="hidden"
       animate="visible"
-      className="max-w-5xl mx-auto mb-20 text-center"
+      className="max-w-5xl mx-auto mt-10 mb-10 text-center"
     >
       <motion.h1
         variants={item}

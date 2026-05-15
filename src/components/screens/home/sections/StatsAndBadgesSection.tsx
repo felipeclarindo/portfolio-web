@@ -2,17 +2,13 @@
 
 import Counter from "@/components/ui/Counter";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useStats } from "@/mock/homeData";
 import { BadgeProps } from "@/types/pages";
 import { motion } from "framer-motion";
 
 export default function StatsSection() {
   const { translate } = useLanguage();
-  const stats = [
-    { number: 120, label:  translate('home.stats.projectsDelivered'), suffix: "+" },
-    { number: 100, label: translate('home.stats.recomendations'), suffix: "+" },
-    { number: 4, label: translate('home.stats.yearsOfExperience'), suffix: "+" },
-  ];
-
+  const stats = useStats();
   const badges: BadgeProps[] = [];
   
   return (
