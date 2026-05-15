@@ -7,9 +7,15 @@ const supabase = createClient(
 
 export async function GET() {
   const { data, error } = await supabase
-    .from("services")
-    .select("*")
-    .order("order_position", { ascending: true });
+    .from("services_request")
+    .select(`
+      *,
+      services (
+        title_en,
+        title_pt
+      )
+    `)
+    .order("created_at", { ascending: false });
 
   if (error) {
     return Response.json({ error: error.message }, { status: 500 });

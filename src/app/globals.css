@@ -103,6 +103,8 @@ body {
   animation: glitch-after 0.25s linear;
 }
 
+/* Animação Glitch */
+
 @keyframes glitch-before {
   0% {
     opacity: 0;
@@ -139,4 +141,53 @@ body {
     opacity: 0;
     transform: translate(1px, 0);
   }
+}
+
+/* Animação Logo */
+
+@keyframes logoIntroPro {
+  0% {
+    transform: translateX(-400px) scale(0.1);
+    opacity: 0;
+    filter: blur(10px);
+  }
+
+  40% {
+    transform: translateX(20px) scale(1.15);
+    opacity: 1;
+    filter: blur(0);
+  }
+
+  55% {
+    transform: translateX(-10px) scale(0.95);
+  }
+
+  70% {
+    transform: translateX(5px) scale(1.05);
+  }
+
+  85% {
+    transform: translateX(-2px) scale(0.99);
+  }
+
+  100% {
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes logoIdle {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+.logo.idle {
+  animation: logoIdle 2s ease-in-out infinite;
+}
+
+.logo {
+  animation: logoIntroPro 1.4s cubic-bezier(0.22, 1, 0.36, 1);
 }

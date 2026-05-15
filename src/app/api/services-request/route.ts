@@ -5,11 +5,21 @@ const supabase = createClient(
   process.env.SUPABASE_SERVICE_ROLE_KEY!
 );
 
-export async function GET() {
+export async function POST(req: Request) {
+  const body = await req.json();
+
+  const { service_id, name, email, message } = body;
+
   const { data, error } = await supabase
-    .from("services")
-    .select("*")
-    .order("order_position", { ascending: true });
+    .from("services_request")
+    .insert([
+      {
+        service_id,
+        name,
+        email,
+        message,
+      },
+    ]);
 
   if (error) {
     return Response.json({ error: error.message }, { status: 500 });

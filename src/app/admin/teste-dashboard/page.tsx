@@ -25,7 +25,7 @@ async function deleteRequest(id: string) {
   revalidatePath("/admin")
 }
 
-export default async function AdminDashboard() {
+export default async function Dashboard() {
   const { data: requests } = await supabaseServer
     .from("services_request")
     .select(`
