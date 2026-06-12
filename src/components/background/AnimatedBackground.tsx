@@ -18,7 +18,6 @@ export default function AnimatedBackground() {
 
   return (
     <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-
       {/* Initial Fade Overlay */}
       <motion.div
         initial={{ opacity: 1 }}
@@ -45,9 +44,9 @@ export default function AnimatedBackground() {
         className="
           absolute top-1/2 left-1/2
           -translate-x-1/2 -translate-y-1/2
-          w-[900px] h-[900px]
+          w-225 h-225
           rounded-full blur-[220px]
-          bg-[var(--brand-primary)]
+          bg-(--brand-primary)
         "
       />
 
@@ -70,7 +69,7 @@ export default function AnimatedBackground() {
           absolute inset-0
           bg-[linear-gradient(to_right,var(--border-secondary)_1px,transparent_1px),
               linear-gradient(to_bottom,var(--border-secondary)_1px,transparent_1px)]
-          bg-[size:48px_48px]
+          bg-size[48px_48px]
         "
       />
 
@@ -99,7 +98,7 @@ export default function AnimatedBackground() {
             var(--brand-soft) 70%,
             transparent 100%
           )]
-          bg-[size:100%_220%]
+          bg-size[100%_220%]
         "
       />
 
@@ -128,7 +127,7 @@ export default function AnimatedBackground() {
             var(--brand-soft) 80%,
             transparent 100%
           )]
-          bg-[size:220%_100%]
+          bg-size[220%_100%]
         "
       />
 
