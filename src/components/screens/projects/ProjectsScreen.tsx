@@ -4,43 +4,24 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Introduction from "../../ui/Introdution";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { useEffect, useState } from "react";
-import { Project } from "@/types/pages";
+import { ProjectProps } from "@/types/pages";
+import { projectsData } from "@/mock/projectsData";
 
 export default function ProjectsScreen() {
-  const { translate, language } = useLanguage();
+  const { translate } = useLanguage();
 
-  const [projects, setProjects] = useState<Project[]>([]);
-  const [loading, setLoading] = useState(true);
+  const projects: ProjectProps[] = projectsData;
 
-  useEffect(() => {
-    async function fetchProjects() {
-      try {
-        const res = await fetch("/api/projects");
-        const data = await res.json();
-        setProjects(data);
-      } catch (error) {
-        console.error("Erro ao carregar projetos", error);
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    fetchProjects();
-  }, []);
-
-  if (loading) {
-    return (
-      <section className="min-h-screen flex items-center justify-center">
-        <p className="font-mono text-sm opacity-60">
-          Loading projects...
-        </p>
-      </section>
-    );
-  }
+  // if (loading) {
+  //   return (
+  //     <section className="min-h-screen flex items-center justify-center">
+  //       <p className="font-mono text-sm opacity-60">Loading projects...</p>
+  //     </section>
+  //   );
+  // }
 
   return (
-    <section className="relative z-10 min-h-screen px-6 pt-28 pb-24 text-[var(--text-primary)] transition-colors">
+    <section className="relative z-10 min-h-screen px-6 pt-28 pb-24 text-(--text-primary) transition-colors">
       <Introduction
         text={translate("projects.title")}
         description={translate("projects.description")}
@@ -50,18 +31,9 @@ export default function ProjectsScreen() {
       {projects.length > 0 ? (
         <div className="max-w-5xl mx-auto space-y-10 mt-16">
           {projects.map((project, index) => {
-            const title =
-              language === "pt" ? project.title_pt : project.title_en;
-
-            const description =
-              language === "pt"
-                ? project.description_pt
-                : project.description_en;
-
-            const link =
-              project.host_url ||
-              project.github_url ||
-              "#";
+            const title = project.title;
+            const description = project.description;
+            const link = `/projects/${project.slug}`;
 
             return (
               <motion.article
@@ -72,23 +44,23 @@ export default function ProjectsScreen() {
                 transition={{ duration: 0.5, delay: index * 0.05 }}
                 className="
                   group relative
-                  border border-[var(--border-primary)]
-                  bg-[var(--bg-secondary)]
+                  border border-(--border-primary)
+                  bg-(--bg-secondary)
                   rounded-xl
                   p-8
                   transition-all duration-300
-                  hover:border-[var(--brand-primary)]
+                  hover:border-(--brand-primary)
                 "
               >
                 {/* Header */}
                 <header className="mb-4">
-                  <h2 className="font-mono text-2xl text-[var(--brand-primary)]">
+                  <h2 className="font-mono text-2xl text-(--brand-primary)">
                     {title}
                   </h2>
                 </header>
 
                 {/* Description */}
-                <p className="text-[var(--text-secondary)] mb-6 leading-relaxed">
+                <p className="text-(--text-secondary) mb-6 leading-relaxed">
                   {description}
                 </p>
 
@@ -100,10 +72,10 @@ export default function ProjectsScreen() {
                       className="
                         px-3 py-1
                         text-xs font-mono
-                        border border-[var(--border-primary)]
+                        border border-(--border-primary)
                         rounded-md
-                        bg-[var(--bg-tertiary)]
-                        text-[var(--text-secondary)]
+                        bg-(--bg-tertiary)
+                        text-(--text-secondary)
                       "
                     >
                       {tech.name}
@@ -114,12 +86,11 @@ export default function ProjectsScreen() {
                 {/* CTA */}
                 <Link
                   href={link}
-                  target="_blank"
                   className="
                     inline-flex items-center gap-2
-                    text-[var(--brand-primary)]
+                    text-(--brand-primary)
                     font-mono
-                    hover:text-[var(--brand-primary-hover)]
+                    hover:text-(--brand-primary-hover)
                     transition-colors
                   "
                 >
@@ -142,12 +113,12 @@ export default function ProjectsScreen() {
             );
           })}
         </div>
-       ):  (
-          <p className="text-center text-[var(--text-secondary)]/65 mt-16 border-2 border-white/20 py-6 px-4 m-auto max-w-fit">
-            {translate("projects.noProjects")}
-          </p>
-        )}
-        
+      ) : (
+        <p className="text-center text-(--text-secondary)/65 mt-16 border-2 border-white/20 py-6 px-4 m-auto max-w-fit">
+          {translate("projects.noProjects")}
+        </p>
+      )}
+
       {/* CTA FINAL */}
       <div className="mt-24 text-center">
         <Link
@@ -156,10 +127,10 @@ export default function ProjectsScreen() {
             inline-flex items-center gap-2
             px-10 py-4
             rounded-md
-            border border-[var(--brand-primary)]
-            text-[var(--brand-primary)]
+            border border-(--brand-primary)
+            text-(--brand-primary)
             font-mono
-            hover:bg-[var(--brand-primary)]
+            hover:bg-(--brand-primary)
             hover:text-white
             transition-all duration-300
           "

@@ -23,7 +23,7 @@ export default function Introduction({
           mb-6
         "
       >
-        <span className="text-[var(--text-primary)] opacity-80">&gt;_</span>{" "}
+        <span className="text-(--text-primary) opacity-80">&gt;_</span>{" "}
         <span className="relative">
           {text}
           <motion.span
@@ -33,8 +33,8 @@ export default function Introduction({
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
             className="
               absolute -bottom-2 left-0
-              h-[2px] w-full
-              bg-[var(--primary-color)]
+              h-2px w-full
+              bg-(--primary-color)
               opacity-30
               origin-left
             "
@@ -43,7 +43,7 @@ export default function Introduction({
       </motion.h1>
 
       {description && (
-        <motion.p variants={item} className="max-w-2xl mx-auto text-[var(--text-secondary)]">
+        <motion.p variants={item} className="max-w-2xl mx-auto text-(--text-secondary)">
           {description}
         </motion.p>
       )}

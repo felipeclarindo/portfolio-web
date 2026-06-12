@@ -12,9 +12,9 @@ export default function Footer() {
   return (
     <footer
       className="
-        relative z-[999]
+        relative z-999
         w-full
-        border-t border-[var(--border-primary)]
+        border-t border-(--border-primary)]
         font-mono text-sm
         transition-colors
       "
@@ -23,10 +23,10 @@ export default function Footer() {
 
         {/* LINKS RÁPIDOS */}
         <div>
-          <h4 className="mb-4 text-[var(--brand-primary)] tracking-wider text-xs">
+          <h4 className="mb-4 text-(--brand-primary) tracking-wider text-xs">
             {">"} Links
           </h4>
-          <ul className="space-y-2 text-[var(--text-secondary)]">
+          <ul className="space-y-2 text-(--text-secondary)">
             <FooterLink
               href="/"
               text={translate("footer.sectionOne.first")}
@@ -52,10 +52,10 @@ export default function Footer() {
 
         {/* TERMOS */}
         <div>
-          <h4 className="mb-4 text-[var(--brand-primary)] tracking-wider text-xs">
-            {">"} Termos
+          <h4 className="mb-4 text-(--brand-primary) tracking-wider text-xs">
+            {">"} {translate("footer.terms")}
           </h4>
-          <ul className="space-y-2 text-[var(--text-secondary)]">
+          <ul className="space-y-2 text-(--text-secondary)">
             <FooterLink
               href="/terms-of-service"
               text={translate("footer.sectionTwo.first")}
@@ -106,7 +106,7 @@ export default function Footer() {
       </div>
 
       {/* COPYRIGHT */}
-      <div className="text-center py-4 border-t border-[var(--border-primary)] text-xs text-[var(--text-muted)]">
+      <div className="text-center py-4 border-t border-(--border-primary)] text-xs text-(--text-muted)]">
         © {new Date().getFullYear()} Felipe Clarindo. All rights reserved.
       </div>
     </footer>
