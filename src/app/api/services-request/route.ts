@@ -2,7 +2,7 @@ import { createClient } from "@supabase/supabase-js";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
+  process.env.SUPABASE_SERVICE_ROLE_KEY!,
 );
 
 export async function POST(req: Request) {
@@ -10,16 +10,14 @@ export async function POST(req: Request) {
 
   const { service_id, name, email, message } = body;
 
-  const { data, error } = await supabase
-    .from("services_request")
-    .insert([
-      {
-        service_id,
-        name,
-        email,
-        message,
-      },
-    ]);
+  const { data, error } = await supabase.from("services_request").insert([
+    {
+      service_id,
+      name,
+      email,
+      message,
+    },
+  ]);
 
   if (error) {
     return Response.json({ error: error.message }, { status: 500 });
