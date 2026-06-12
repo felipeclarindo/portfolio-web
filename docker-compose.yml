@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  portfolio:
+    container_name: portfolio-app
+
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    restart: unless-stopped
+
+    ports:
+      - "3000:3000"
+
+    env_file:
+      - .env.production
+
+    environment:
+      NODE_ENV: production
+
+    networks:
+      - portfolio-network
+
+networks:
+  portfolio-network:
+    driver: bridge

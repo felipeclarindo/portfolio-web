@@ -1,0 +1,17 @@
+import { LogoProps } from "@/types/pages";
+import Image from "next/image";
+import Link from "next/link";
+
+export default function Logo({height, width, keyframe}: Readonly<LogoProps>) {
+    return (
+          <Link href="/" className={`${keyframe} flex items-center`}>
+            <Image
+              src="/images/favicon.png"
+              alt="Felipe Clarindo Logo"
+              width={width || 40}
+              height={height || 40}
+              priority
+            />
+          </Link>
+    );
+}

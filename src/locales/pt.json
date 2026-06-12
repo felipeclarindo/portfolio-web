@@ -2,27 +2,52 @@
   "header": {
     "home": "Início",
     "projects": "Projetos",
-    "resume": "Resumo",
+    "resume": "Curriculo",
     "contact": "Contato",
     "services": "Serviços"
   },
 
   "home": {
+    "headline": {
+      "whiteOne": "Conquiste sua",
+      "blueOne": "Presença Digital",
+      "whiteTwo": "com",
+      "blueTwo": "Sistemas Escaláveis",
+      "whiteThree": "que Impulsionam o Crescimento do seu Negócio"
+    },
     "apresentation": "Sou",
     "name": "Felipe Clarindo",
-    "description": "um desenvolvedor full stack apaixonado por transformar código em experiências digitais impactantes. Explore minha jornada através de algoritmos e design.",
-    "seeMyWork": "Veja Meu Trabalho",
-    "contact": "Contato"
+    "description": "Desenvolvedor Full Stack e especialista em dados criando aplicações de alto desempenho, APIs inteligentes e plataformas orientadas a dados com arquitetura limpa e impacto mensurável.",
+    "buttonOne": "Veja Meu Trabalho",
+    "buttonTwo": "Vamos Construir Juntos",
+    "benefitsTitle": "Por que trabalhar comigo?",
+    "badgesTitle": "Habilidades e Certificações",
+    "benefits": {
+      "title": "Por que trabalhar comigo?",
+      "benefitOne": "Desenvolvimento Orientado ao Negócio",
+      "benefitOneDescription": "Cada linha de código é escrita para gerar resultados mensuráveis no negócio.",
+      "benefitTwo": "Arquitetura Escalável e Limpa",
+      "benefitTwoDescription": "Construído para crescer com sua empresa sem dívidas técnicas.",
+      "benefitThree": "Performance e Otimização",
+      "benefitThreeDescription": "Aplicações de alta velocidade focadas na experiência do usuário, SEO e conversão."
+    },
+    "stats": {
+      "title": "Estatísticas e Conquistas",
+      "projectsDelivered": "Projetos Entregues",
+      "recomendations": "Recomendações",
+      "yearsOfExperience": "Anos de Experiência"
+    }
   },
 
   "projects": {
     "title": "Projetos",
     "description": "Projetos desenvolvidos com foco em engenharia, performance e experiência do usuário. Cada projeto resolve um problema real.",
-    "seeMyServices": "Veja Meus Serviços"
+    "seeMyServices": "Veja Meus Serviços",
+    "noProjects": "Nenhum projeto para mostrar no momento. Por favor, volte mais tarde."
   },
 
   "resume": {
-    "title": "Resumo",
+    "title": "Curriculo",
     "description": "Experiência profissional, habilidades e formação técnica focadas na construção de sistemas confiáveis e escaláveis.",
     "experience": "Experiencia",
     "education": "Educação",
@@ -32,7 +57,23 @@
 
   "services": {
     "title": "Serviços",
-    "description": "Eu ajudo empresas e indivíduos a construir soluções digitais confiáveis, escaláveis e eficientes usando tecnologias modernas."
+    "description": "Eu ajudo empresas e indivíduos a construir soluções digitais confiáveis, escaláveis e eficientes usando tecnologias modernas.",
+    "subtitleOne": "Quais serviços eu ofereço?",
+    "subtitleTwo": "Como é o processo?",
+    "stepsTitle": "Passo",
+    "stepOneDescription": "Entendendo o problema e requisitos",
+    "stepTwoDescription": "Planejamento técnico",
+    "stepThreeDescription": "Desenvolvimento e Testes",
+    "stepFourDescription": "Entrega e Suporte",
+    "serviceOneTitle": "Desenvolvimento Web",
+    "serviceOneDescription": "Aplicações web modernas, de alto desempenho e escaláveis usando as melhores práticas de engenharia.",
+    "serviceTwoTitle": "APIs e Backend",
+    "serviceTwoDescription": "APIs seguras e bem estruturadas com foco em escalabilidade e arquitetura limpa.",
+    "serviceThreeTitle": "Automações e Scripts",
+    "serviceThreeDescription": "Automação de tarefas repetitivas, bots e scripts para melhorar a produtividade.",
+    "serviceFourTitle": "Dados e Machine Learning",
+    "serviceFourDescription": "Análise de dados, painéis e modelos preditivos para problemas do mundo real.",
+    "temp": "Solicitar"
   },
 
   "contact": {
@@ -133,6 +174,7 @@
       "fourth": "Política de Cookies"
     },
     "rightsReserved": "Todos os direitos reservados.",
-    "language": "Idioma"
+    "language": "Idioma",
+    "terms": "Termos"
   }
 }

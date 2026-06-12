@@ -9,7 +9,7 @@ import {
 } from "react";
 import pt from "@/locales/pt.json";
 import en from "@/locales/en.json";
-import { LanguageContextType, LanguageProviderProps, Locale } from "@/types";
+import { LanguageContextType, LanguageProviderProps, Locale } from "@/types/language";
 
 type Messages = typeof pt;
 
@@ -21,7 +21,7 @@ const messages: Record<Locale, Messages> = {
 const LanguageContext = createContext<LanguageContextType | null>(null);
 
 export function LanguageProvider({ children }: LanguageProviderProps) {
-  const [locale, setLocale] = useState<Locale>("pt");
+  const [language, setLanguage] = useState<Locale>("pt");
 
   const translate = useCallback(
     (path: string): string => {
@@ -30,16 +30,16 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
           return (acc as Record<string, unknown>)[key];
         }
         return undefined;
-      }, messages[locale] as unknown);
+      }, messages[language] as unknown);
 
       return typeof value === "string" ? value : path;
     },
-    [locale],
+    [language],
   );
 
   const value = useMemo(
-    () => ({ locale, translate, setLocale }),
-    [locale, translate, setLocale],
+    () => ({ language, translate, setLanguage }),
+    [language, translate, setLanguage],
   );
 
   return (
@@ -49,10 +49,12 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
   );
 }
 
-export function useLanguage() {
+export function useLanguage(): LanguageContextType {
   const context = useContext(LanguageContext);
+
   if (!context) {
     throw new Error("useLanguage must be used within LanguageProvider");
   }
+
   return context;
 }

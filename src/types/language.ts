@@ -3,9 +3,9 @@ import { ReactNode } from "react";
 export type Locale = "pt" | "en";
 
 export type LanguageContextType = {
-  locale: Locale;
+  language: Locale;
   translate: (key: string) => string;
-  setLocale: (locale: Locale) => void;
+  setLanguage: React.Dispatch<React.SetStateAction<Locale>>;
 };
 
 export type LanguageProviderProps = Readonly<{

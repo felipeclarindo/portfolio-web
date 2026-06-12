@@ -1,11 +1,30 @@
 @import "tailwindcss";
 
-/* Variables */
+/* Light Theme */
 :root {
-  --primary-color: oklch(0.723 0.219 149.579);
-  --secondary-color: #000000;
-  --thirty-color: #ffffff;
-  --fourty-color: #99a1af;
+  /* === Backgrounds === */
+  --bg-primary: #F8FAFC;
+  --bg-secondary: #FFFFFF;
+  --bg-tertiary: #F1F5F9;
+
+  /* === Text === */
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #94A3B8;
+
+  /* === Brand / Accent === */
+  --brand-primary: #2563EB;
+  --brand-primary-hover: #1D4ED8;
+  --brand-soft: #DBEAFE;
+
+  /* === Borders === */
+  --border-primary: #E2E8F0;
+  --border-secondary: #CBD5E1;
+
+  /* === Status (futuro) === */
+  --success: #10B981;
+  --warning: #F59E0B;
+  --danger: #EF4444;
 }
 
 html,
@@ -14,7 +33,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #000000;
+  background-color: var(--background-color);
 }
 
 body {
@@ -25,9 +44,29 @@ body {
 
 /* Dark Theme */
 .dark {
-  --primary-color: oklch(0.723 0.219 149.579);
-  --secondary-color: #ffffff;
-  --thirty-color: #000000;
+  /* === Backgrounds === */
+  --bg-primary: #0B1220;
+  --bg-secondary: #111827;
+  --bg-tertiary: #1F2937;
+
+  /* === Text === */
+  --text-primary: #F8FAFC;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
+
+  /* === Brand / Accent === */
+  --brand-primary: #3B82F6;
+  --brand-primary-hover: #2563EB;
+  --brand-soft: #1E3A8A;
+
+  /* === Borders === */
+  --border-primary: #1F2937;
+  --border-secondary: #334155;
+
+  /* === Status */
+  --success: #34D399;
+  --warning: #FBBF24;
+  --danger: #F87171;
 }
 
 /* Efeito GLitch */
@@ -47,12 +86,12 @@ body {
 }
 
 .glitch-text::before {
-  color: #00ff88;
+  color: var(--text-color);
   transform: translate(-1px, 0);
 }
 
 .glitch-text::after {
-  color: #00cc66;
+  color: var(--primary-color);
   transform: translate(1px, 0);
 }
 
@@ -63,6 +102,8 @@ body {
 .glitch-text:hover::after {
   animation: glitch-after 0.25s linear;
 }
+
+/* Animação Glitch */
 
 @keyframes glitch-before {
   0% {
@@ -100,4 +141,53 @@ body {
     opacity: 0;
     transform: translate(1px, 0);
   }
+}
+
+/* Animação Logo */
+
+@keyframes logoIntroPro {
+  0% {
+    transform: translateX(-400px) scale(0.1);
+    opacity: 0;
+    filter: blur(10px);
+  }
+
+  40% {
+    transform: translateX(20px) scale(1.15);
+    opacity: 1;
+    filter: blur(0);
+  }
+
+  55% {
+    transform: translateX(-10px) scale(0.95);
+  }
+
+  70% {
+    transform: translateX(5px) scale(1.05);
+  }
+
+  85% {
+    transform: translateX(-2px) scale(0.99);
+  }
+
+  100% {
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes logoIdle {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+.logo.idle {
+  animation: logoIdle 2s ease-in-out infinite;
+}
+
+.logo {
+  animation: logoIntroPro 1.4s cubic-bezier(0.22, 1, 0.36, 1);
 }

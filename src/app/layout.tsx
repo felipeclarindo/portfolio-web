@@ -4,12 +4,13 @@ import Footer from "@/components/layout/Footer";
 import { Providers } from "./providers";
 import Header from "@/components/layout/Header";
 import AnimatedBackground from "@/components/background/AnimatedBackground";
+import WhatsappButton from "@/components/ui/WhatsappButton";
 
 export const metadata: Metadata = {
   title: "Portfolio | Felipe Clarindo",
   description: "Felipe Clarindo's portfolio",
   icons: {
-    icon: "/images/logo.png",
+    icon: "/images/favicon.png",
   },
 };
 
@@ -25,7 +26,10 @@ export default function RootLayout({
 
         <Providers>
           <Header />
-          <main className="relative z-10 min-h-screen">{children}</main>
+          <main className="relative z-10 min-h-screen">
+            {children}
+            <WhatsappButton />
+          </main>
           <Footer />
         </Providers>
       </body>
