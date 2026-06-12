@@ -21,7 +21,7 @@ const messages: Record<Locale, Messages> = {
 const LanguageContext = createContext<LanguageContextType | null>(null);
 
 export function LanguageProvider({ children }: LanguageProviderProps) {
-  const [locale, setLocale] = useState<Locale>("pt");
+  const [language, setLanguage] = useState<Locale>("pt");
 
   const translate = useCallback(
     (path: string): string => {
@@ -30,16 +30,16 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
           return (acc as Record<string, unknown>)[key];
         }
         return undefined;
-      }, messages[locale] as unknown);
+      }, messages[language] as unknown);
 
       return typeof value === "string" ? value : path;
     },
-    [locale],
+    [language],
   );
 
   const value = useMemo(
-    () => ({ locale, translate, setLocale }),
-    [locale, translate, setLocale],
+    () => ({ language, translate, setLanguage }),
+    [language, translate, setLanguage],
   );
 
   return (

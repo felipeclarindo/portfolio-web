@@ -12,26 +12,25 @@ export type InfoBlockProps = {
   content: string;
 }
 
-export type Stack = {
+export type StackProps = {
   id: string;
   name: string;
 }
 
-export type Demo = {
+export type DemonstrationProps = {
   id: string;
   url: string;
 }
 
-export type Project = {
+export type ProjectProps = {
   id: string;
-  title_pt: string;
-  title_en: string;
-  description_pt: string;
-  description_en: string;
+  slug: string;
+  title: string;
+  description: string;
   github_url?: string;
   host_url?: string;
-  stacks: Stack[];
-  projects_demos: Demo[];
+  stacks: StackProps[];
+  project_demostration: DemonstrationProps[];
 }
 
 

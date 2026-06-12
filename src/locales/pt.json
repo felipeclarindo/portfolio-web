@@ -61,17 +61,19 @@
     "subtitleOne": "Quais serviços eu ofereço?",
     "subtitleTwo": "Como é o processo?",
     "stepsTitle": "Passo",
-    "stepOneDescription": "Entendendo o problema",
+    "stepOneDescription": "Entendendo o problema e requisitos",
     "stepTwoDescription": "Planejamento técnico",
     "stepThreeDescription": "Desenvolvimento e Testes",
     "stepFourDescription": "Entrega e Suporte",
     "serviceOneTitle": "Desenvolvimento Web",
     "serviceOneDescription": "Aplicações web modernas, de alto desempenho e escaláveis usando as melhores práticas de engenharia.",
+    "serviceTwoTitle": "APIs e Backend",
     "serviceTwoDescription": "APIs seguras e bem estruturadas com foco em escalabilidade e arquitetura limpa.",
     "serviceThreeTitle": "Automações e Scripts",
     "serviceThreeDescription": "Automação de tarefas repetitivas, bots e scripts para melhorar a produtividade.",
     "serviceFourTitle": "Dados e Machine Learning",
-    "serviceFourDescription": "Análise de dados, painéis e modelos preditivos para problemas do mundo real."
+    "serviceFourDescription": "Análise de dados, painéis e modelos preditivos para problemas do mundo real.",
+    "temp": "Solicitar"
   },
 
   "contact": {
@@ -172,6 +174,7 @@
       "fourth": "Política de Cookies"
     },
     "rightsReserved": "Todos os direitos reservados.",
-    "language": "Idioma"
+    "language": "Idioma",
+    "terms": "Termos"
   }
 }

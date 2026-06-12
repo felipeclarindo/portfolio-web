@@ -62,17 +62,19 @@
     "subtitleOne": "What I offer",
     "subtitleTwo": "How it works",
     "stepsTitle": "Step",
-    "stepOneDescription": "Understanding the proble",
+    "stepOneDescription": "Understanding the problem & requirements",
     "stepTwoDescription": "Technical planning",
     "stepThreeDescription": "Development & testing",
     "stepFourDescription": "Delivery & support",
     "serviceOneTitle": "Web Development",
     "serviceOneDescription": "Modern, performant and scalable web applications using best engineering practices.",
+    "serviceTwoTitle": "APIs & Backend",
     "serviceTwoDescription": "Secure and well-structured APIs with focus on scalability and clean architecture.",
     "serviceThreeTitle": "Automation & Scripts",
     "serviceThreeDescription": "Automation of repetitive tasks, bots and scripts to improve productivity.",
     "serviceFourTitle": "Data & Machine Learning",
-    "serviceFourDescription": "Data analysis, dashboards and predictive models for real-world problems."
+    "serviceFourDescription": "Data analysis, dashboards and predictive models for real-world problems.",
+    "temp": "Request"
   },
 
   "contact": {
@@ -173,6 +175,7 @@
       "fourth": "Cookie Policy"
     },
     "rightsReserved": "All rights reserved.",
-    "language": "Language"
+    "language": "Language",
+    "terms": "Terms"
   }
 }
