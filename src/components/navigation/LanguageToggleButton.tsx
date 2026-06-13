@@ -3,7 +3,11 @@
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-export default function LanguageToggleButton() {
+export default function LanguageToggleButton({
+  isVisible = true,
+}: {
+  isVisible?: boolean;
+}) {
   const { language, setLanguage } = useLanguage();
 
   const isPT = language === "pt";
@@ -12,9 +16,9 @@ export default function LanguageToggleButton() {
     <motion.button
       whileTap={{ scale: 0.96 }}
       onClick={() => setLanguage(isPT ? "en" : "pt")}
-      className="
+      className={`${isVisible ? "flex" : "hidden"}
         relative
-        flex items-center
+        items-center
         gap-1
         px-3 py-1.5
         text-xs font-mono
@@ -25,7 +29,7 @@ export default function LanguageToggleButton() {
         hover:bg-(--brand-primary)
         hover:text-white
         transition-all duration-300
-      "
+      `}
       aria-label="Toggle language"
     >
       <span className={isPT ? "opacity-50" : "font-semibold"}>EN</span>

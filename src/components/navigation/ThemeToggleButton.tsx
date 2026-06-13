@@ -25,10 +25,10 @@ export default function ThemeToggleButton() {
         flex items-center justify-center
         w-9 h-9
         rounded-md
-        border border-[var(--border-primary)]
-        bg-[var(--bg-tertiary)]
-        text-[var(--text-secondary)]
-        hover:bg-[var(--brand-primary)]
+        border border-(--border-primary)
+        bg-(--bg-tertiary)
+        text-(--text-secondary)
+        hover:bg-(--brand-primary)
         hover:text-white
         transition-all duration-300
       "
