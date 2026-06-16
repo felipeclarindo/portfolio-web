@@ -32,18 +32,17 @@ export default function Header() {
       <header
         className="
           fixed top-0 left-0 w-full
-          z-[9999]
+          z-9999
           backdrop-blur-xl
-          border-b border-[var(--border-primary)]
+          border-b border-(--border-primary)
           transition-colors
         "
       >
-        <div className="max-w-7xl mx-auto flex items-center justify-between py-6">
-
+        <div className="max-w-7xl lg:mx-auto mx-4 flex items-center justify-between py-6">
           <Logo keyframe="logo" height={45} width={45} />
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-10 text-sm font-mono text-[var(--text-secondary)]">
+          <nav className="hidden md:flex items-center gap-10 text-sm font-mono text-(--text-secondary)">
             {navItems.map((item) => (
               <motion.div
                 key={item.name}
@@ -55,7 +54,7 @@ export default function Header() {
                   className="
                     relative z-10
                     transition-colors
-                    hover:text-[var(--brand-primary)]
+                    hover:text-(--brand-primary)
                   "
                 >
                   {item.name}
@@ -81,7 +80,7 @@ export default function Header() {
             {/* Mobile Toggle */}
             <button
               onClick={() => setOpen(true)}
-              className="md:hidden text-[var(--text-primary)]"
+              className="md:hidden text-(--text-primary)"
               aria-label="Open menu"
             >
               <Menu size={26} />
@@ -94,8 +93,8 @@ export default function Header() {
       {open && (
         <div
           className="
-            fixed inset-0 z-[10000]
-            bg-[var(--bg-primary)] 
+            fixed inset-0 z-10000
+            bg-(--bg-tertiary)
             flex flex-col
             transition-colors
           "
@@ -104,7 +103,7 @@ export default function Header() {
           <div className="flex justify-end px-6 py-4">
             <button
               onClick={() => setOpen(false)}
-              className="text-[var(--brand-primary)]"
+              className="text-(--brand-primary)"
               aria-label="Close menu"
             >
               <X size={28} />
@@ -118,13 +117,13 @@ export default function Header() {
           </div>
 
           {/* Mobile Nav */}
-          <nav className="flex flex-col items-center justify-center flex-1 gap-8 text-lg font-mono text-[var(--text-primary)]">
+          <nav className="flex flex-col items-center justify-center flex-1 gap-8 text-lg font-mono text-(--text-primary)">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.path}
                 onClick={() => setOpen(false)}
-                className="hover:text-[var(--brand-primary)] transition-colors"
+                className="hover:text-(--brand-primary) transition-colors"
               >
                 {item.name}
               </Link>

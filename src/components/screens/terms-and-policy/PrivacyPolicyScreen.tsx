@@ -8,7 +8,7 @@ export default function PrivacyPolicyScreen() {
   const { translate } = useLanguage();
 
   return (
-    <section  
+    <section
       className="
         relative z-10
         min-h-screen

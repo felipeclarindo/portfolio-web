@@ -19,10 +19,9 @@ export default function Footer() {
         transition-colors
       "
     >
-      <div className="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-3 gap-12">
-
+      <div className="max-w-7xl mx-auto px-6 py-14 flex flex-col md:grid md:grid-cols-3 gap-8">
         {/* LINKS RÁPIDOS */}
-        <div>
+        <div className="sm:flex sm:flex-col sm:items-start text-center sm:text-left">
           <h4 className="mb-4 text-(--brand-primary) tracking-wider text-xs">
             {">"} Links
           </h4>
@@ -51,11 +50,11 @@ export default function Footer() {
         </div>
 
         {/* TERMOS */}
-        <div>
+        <div className="sm:flex sm:flex-col sm:items-start text-center">
           <h4 className="mb-4 text-(--brand-primary) tracking-wider text-xs">
             {">"} {translate("footer.terms")}
           </h4>
-          <ul className="space-y-2 text-(--text-secondary)">
+          <ul className="space-y-2 text-(--text-secondary) sm:text-left">
             <FooterLink
               href="/terms-of-service"
               text={translate("footer.sectionTwo.first")}
@@ -76,15 +75,11 @@ export default function Footer() {
         </div>
 
         {/* BRAND + SOCIAL */}
-        <div className="flex flex-col text-center items-center justify-center gap-6 mx-auto">
-
+        <div className="flex flex-col text-center items-center justify-center gap-6 mx-auto mb-2">
           <Logo height={68} width={68} />
 
           <div className="flex gap-4">
-            <SocialIcon
-              href="https://github.com/felipeclarindo"
-              label="Github"
-            >
+            <SocialIcon href="https://github.com/felipeclarindo" label="Github">
               <Github size={18} />
             </SocialIcon>
 

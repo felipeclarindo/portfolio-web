@@ -1,4 +1,4 @@
-import { FaWhatsapp } from "react-icons/fa";
+import { MessageCircle } from "lucide-react";
 
 export default function WhatsappButton() {
   return (
@@ -17,7 +17,7 @@ export default function WhatsappButton() {
         transition
       "
     >
-      <FaWhatsapp size={28} />
+      <MessageCircle size={28} />
     </a>
   );
 }

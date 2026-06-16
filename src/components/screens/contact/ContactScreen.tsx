@@ -17,7 +17,7 @@ export default function ContactScreen() {
         px-6
         pt-28 pb-24
         flex flex-col items-center
-        text-[var(--text-primary)]
+        text-(--text-primary)
         transition-colors
       "
     >
@@ -28,7 +28,7 @@ export default function ContactScreen() {
           pointer-events-none
           absolute inset-0
           bg-[linear-gradient(to_right,var(--border-primary)_1px,transparent_1px)]
-          bg-[size:48px_48px]
+          bg-size-[48px_48px]
           opacity-10
         "
       />
@@ -50,49 +50,49 @@ export default function ContactScreen() {
           className="
             mx-auto
             w-full max-w-xl
-            border border-[var(--border-primary)]
-            bg-[var(--bg-secondary)]
+            border border-(--border-primary)
+            bg-(--bg-secondary)
             rounded-xl
             p-8
             font-mono
             text-left
             transition-all duration-300
-            hover:border-[var(--brand-primary)]
+            hover:border-(--brand-primary)
           "
         >
-          <p className="text-[var(--text-secondary)] mb-6">
-            <span className="text-[var(--brand-primary)]">$</span>{" "}
+          <p className="text-(--text-secondary)] mb-6">
+            <span className="text-(--brand-primary)]">$</span>{" "}
             {translate("contact.prompt")}
           </p>
 
-          <ul className="space-y-4 text-[var(--text-secondary)]">
+          <ul className="space-y-4 text-(--text-secondary)]">
             <li>
-              <span className="text-[var(--brand-primary)]">email:</span>{" "}
+              <span className="text-(--brand-primary)]">email:</span>{" "}
               <a
                 href="mailto:contato.felipeclarindo@gmail.com"
-                className="hover:text-[var(--brand-primary)] transition-colors"
+                className="hover:text-(--brand-primary)] transition-colors"
               >
                 contato.felipeclarindo@gmail.com
               </a>
             </li>
 
             <li>
-              <span className="text-[var(--brand-primary)]">github:</span>{" "}
+              <span className="text-(--brand-primary)]">github:</span>{" "}
               <Link
                 target="_blank"
                 href="https://github.com/felipeclarindo"
-                className="hover:text-[var(--brand-primary)] transition-colors"
+                className="hover:text-(--brand-primary)] transition-colors"
               >
                 github.com/felipeclarindo
               </Link>
             </li>
 
             <li>
-              <span className="text-[var(--brand-primary)]">linkedin:</span>{" "}
+              <span className="text-(--brand-primary)]">linkedin:</span>{" "}
               <Link
                 target="_blank"
                 href="https://linkedin.com/in/felipeclarindo"
-                className="hover:text-[var(--brand-primary)] transition-colors"
+                className="hover:text-(--brand-primary)] transition-colors"
               >
                 linkedin.com/in/felipeclarindo
               </Link>
@@ -107,9 +107,9 @@ export default function ContactScreen() {
                 inline-flex items-center gap-2
                 px-8 py-3
                 rounded-md
-                border border-[var(--brand-primary)]
-                text-[var(--brand-primary)]
-                hover:bg-[var(--brand-primary)]
+                border border-(--brand-primary)
+                text-(--brand-primary)
+                hover:bg-(--brand-primary)
                 hover:text-white
                 transition-all duration-300
               "

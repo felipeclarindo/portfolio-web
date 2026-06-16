@@ -1,3 +1,4 @@
+"use client";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useBenefits } from "@/mock/homeData";
 import { motion } from "framer-motion";

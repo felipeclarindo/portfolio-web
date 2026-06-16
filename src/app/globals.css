@@ -5,7 +5,7 @@
   /* === Backgrounds === */
   --bg-primary: #F8FAFC;
   --bg-secondary: #FFFFFF;
-  --bg-tertiary: #F1F5F9;
+  --bg-tertiary: #bebfc0;
 
   /* === Text === */
   --text-primary: #0F172A;
@@ -33,7 +33,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: var(--background-color);
+  background-color: var(--bg-primary);
 }
 
 body {

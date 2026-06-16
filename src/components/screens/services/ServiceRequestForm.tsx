@@ -1,5 +1,3 @@
-"use client";
-
 import { motion } from "framer-motion";
 import { container } from "@/lib/motion/motion";
 import { useServices } from "@/mock/servicesData";

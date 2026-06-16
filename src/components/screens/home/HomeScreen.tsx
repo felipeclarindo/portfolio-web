@@ -1,5 +1,3 @@
-"use client";
-
 import BenefitsSection from "./sections/BenefitsSection";
 import StatsSection from "./sections/StatsAndBadgesSection";
 import HeadlineSection from "./sections/HeadlineSection";
@@ -12,7 +10,7 @@ export default function HomeScreen() {
         py-40 
         flex flex-col items-center
         px-6 overflow-hidden
-        text-[var(--text-primary)]
+        text-(--text-primary)
         transition-colors
       "
     >

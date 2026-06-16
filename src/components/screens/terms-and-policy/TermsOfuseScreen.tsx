@@ -56,8 +56,8 @@ export default function TermsOfUseScreen() {
               aria-hidden
               className="
                 absolute -bottom-2 left-0
-                h-[2px] w-full
-                bg-[var(--primary-color)]
+                h-0.5 w-full
+                bg-(--primary-color)
                 opacity-30
               "
             />
@@ -78,35 +78,35 @@ export default function TermsOfUseScreen() {
           <p>{translate("termsOfUse.introduction")}</p>
 
           <div>
-            <h2 className="text-[var(--primary-color)] text-lg mb-2">
+            <h2 className="text-(--primary-color) text-lg mb-2">
               1. {translate("termsOfUse.section1.title")}
             </h2>
             <p>{translate("termsOfUse.section1.content")}</p>
           </div>
 
           <div>
-            <h2 className="text-[var(--primary-color)] text-lg mb-2">
+            <h2 className="text-(--primary-color) text-lg mb-2">
               2. {translate("termsOfUse.section2.title")}
             </h2>
             <p>{translate("termsOfUse.section2.content")}</p>
           </div>
 
           <div>
-            <h2 className="text-[var(--primary-color)] text-lg mb-2">
+            <h2 className="text-(--primary-color) text-lg mb-2">
               3. {translate("termsOfUse.section3.title")}
             </h2>
             <p>{translate("termsOfUse.section3.content")}</p>
           </div>
 
           <div>
-            <h2 className="text-[var(--primary-color)] text-lg mb-2">
+            <h2 className="text-(--primary-color) text-lg mb-2">
               4. {translate("termsOfUse.section4.title")}
             </h2>
             <p>{translate("termsOfUse.section4.content")}</p>
           </div>
 
           <div>
-            <h2 className="text-[var(--primary-color)] text-lg mb-2">
+            <h2 className="text-(--primary-color) text-lg mb-2">
               5. {translate("termsOfUse.section5.title")}
             </h2>
             <p>{translate("termsOfUse.section5.content")}</p>

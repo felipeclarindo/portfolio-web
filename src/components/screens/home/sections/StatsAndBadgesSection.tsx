@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Counter from "@/components/ui/Counter";
 import { useLanguage } from "@/contexts/LanguageContext";

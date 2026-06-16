@@ -33,8 +33,7 @@ export default function ResumeScreen() {
   const { translate } = useLanguage();
 
   return (
-    <section className="relative z-10 min-h-screen px-6 pt-28 pb-24 text-[var(--text-primary)] transition-colors">
-
+    <section className="relative z-10 min-h-screen px-6 pt-28 pb-24 text-(--text-primary) transition-colors">
       <Introduction
         text={translate("resume.title")}
         description={translate("resume.description")}
@@ -48,7 +47,7 @@ export default function ResumeScreen() {
       >
         {/* EXPERIENCE */}
         <motion.section variants={container}>
-          <h2 className="font-mono text-2xl text-[var(--brand-primary)] mb-8">
+          <h2 className="font-mono text-2xl text-(--brand-primary) mb-8">
             {translate("resume.experience")}
           </h2>
 
@@ -57,24 +56,24 @@ export default function ResumeScreen() {
               <div
                 key={exp.role}
                 className="
-                  border border-[var(--border-primary)]
-                  bg-[var(--bg-secondary)]
+                  border border-(--border-primary)
+                  bg-(--bg-secondary)
                   rounded-xl
                   p-6
                   transition-all duration-300
-                  hover:border-[var(--brand-primary)]
+                  hover:border-(--brand-primary)
                 "
               >
                 <div className="flex flex-col md:flex-row md:justify-between mb-3">
-                  <h3 className="text-lg font-mono text-[var(--brand-primary)]">
+                  <h3 className="text-lg font-mono text-(--brand-primary)">
                     {exp.role}
                   </h3>
-                  <span className="text-sm text-[var(--text-muted)]">
+                  <span className="text-sm text-(--text-muted)">
                     {exp.period}
                   </span>
                 </div>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed">
+                <p className="text-(--text-secondary)] leading-relaxed">
                   {exp.description}
                 </p>
               </div>
@@ -84,7 +83,7 @@ export default function ResumeScreen() {
 
         {/* SKILLS */}
         <motion.section variants={container}>
-          <h2 className="font-mono text-2xl text-[var(--brand-primary)] mb-8">
+          <h2 className="font-mono text-2xl text-(--brand-primary) mb-8">
             {translate("resume.skills")}
           </h2>
 
@@ -93,15 +92,15 @@ export default function ResumeScreen() {
               <div
                 key={category}
                 className="
-                  border border-[var(--border-primary)]
-                  bg-[var(--bg-secondary)]
+                  border border-(--border-primary)
+                  bg-(--bg-secondary)
                   rounded-xl
                   p-6
                   transition-all duration-300
-                  hover:border-[var(--brand-primary)]
+                  hover:border-(--brand-primary)
                 "
               >
-                <h3 className="mb-4 text-[var(--brand-primary)] font-mono">
+                <h3 className="mb-4 text-(--brand-primary) font-mono">
                   {category}
                 </h3>
 
@@ -112,10 +111,10 @@ export default function ResumeScreen() {
                       className="
                         px-3 py-1
                         text-xs font-mono
-                        border border-[var(--border-primary)]
+                        border border-(--border-primary)
                         rounded-md
-                        bg-[var(--bg-tertiary)]
-                        text-[var(--text-secondary)]
+                        bg-(--bg-tertiary)
+                        text-(--text-secondary)
                       "
                     >
                       {skill}
@@ -135,10 +134,10 @@ export default function ResumeScreen() {
               inline-flex items-center gap-2
               px-10 py-4
               rounded-md
-              border border-[var(--brand-primary)]
-              text-[var(--brand-primary)]
+              border border-(--brand-primary)
+              text-(--brand-primary)
               font-mono
-              hover:bg-[var(--brand-primary)]
+              hover:bg-(--brand-primary)
               hover:text-white
               transition-all duration-300
             "

@@ -1,8 +1,6 @@
-"use client";
-
 import { motion } from "framer-motion";
 import { IntroductionProps } from "@/types/ui";
-import { container, item,  } from "@/lib/motion/motion";
+import { container, item } from "@/lib/motion/motion";
 
 export default function Introduction({
   text,
@@ -43,7 +41,10 @@ export default function Introduction({
       </motion.h1>
 
       {description && (
-        <motion.p variants={item} className="max-w-2xl mx-auto text-(--text-secondary)">
+        <motion.p
+          variants={item}
+          className="max-w-2xl mx-auto text-(--text-secondary)"
+        >
           {description}
         </motion.p>
       )}

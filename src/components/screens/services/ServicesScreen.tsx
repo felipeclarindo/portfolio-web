@@ -122,6 +122,7 @@ export default function ServicesScreen() {
               hover:bg-(--brand-primary-hover)
               transition-all duration-300
               font-mono
+              cursor-pointer
             "
         >
           {translate("services.temp")}
