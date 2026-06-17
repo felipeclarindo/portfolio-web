@@ -53,10 +53,7 @@ export default function AnimatedBackground() {
       {/* GRID */}
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{
-          opacity: isDark ? 0.15 : 0.08,
-          backgroundPosition: ["0px 0px", "48px 48px"],
-        }}
+        animate={{ opacity: isDark ? 0.15 : 0.08 }}
         transition={{
           opacity: { duration: 1.2, delay: 0.3 },
           backgroundPosition: {
@@ -136,7 +133,7 @@ export default function AnimatedBackground() {
         aria-hidden
         className="
           absolute inset-0
-          bg-[url('/images/noise.gif')]
+          bg-[url('/images/noise.webp')]
           opacity-[0.2]
         "
       />

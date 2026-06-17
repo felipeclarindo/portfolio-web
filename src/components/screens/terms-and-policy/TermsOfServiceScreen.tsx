@@ -42,7 +42,7 @@ export default function TermsOfServiceScreen() {
           variants={container}
           className="
             font-mono
-            text-[var(--primary-color)]
+            text-(--primary-color)
             text-3xl md:text-5xl
             mb-10
             tracking-tight

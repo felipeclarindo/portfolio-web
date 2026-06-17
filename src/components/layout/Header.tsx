@@ -39,7 +39,7 @@ export default function Header() {
         "
       >
         <div className="max-w-7xl lg:mx-auto mx-4 flex items-center justify-between py-6">
-          <Logo keyframe="logo" height={45} width={45} />
+          <Logo height={45} width={45} />
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-10 text-sm font-mono text-(--text-secondary)">

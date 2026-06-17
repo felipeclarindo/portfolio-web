@@ -13,7 +13,7 @@ export default function ProjectScreen({ slug }: Props) {
     notFound();
   }
 
-  const video = project.project_demostration?.[0]?.url;
+  const video = project.demonstration_url;
 
   return (
     <section className="min-h-screen pt-32 pb-24 px-6 text-(--text-primary)">

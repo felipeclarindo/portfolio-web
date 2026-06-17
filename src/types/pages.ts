@@ -17,11 +17,6 @@ export type StackProps = {
   name: string;
 }
 
-export type DemonstrationProps = {
-  id: string;
-  url: string;
-}
-
 export type ProjectProps = {
   id: string;
   slug: string;
@@ -30,7 +25,7 @@ export type ProjectProps = {
   github_url?: string;
   host_url?: string;
   stacks: StackProps[];
-  project_demostration: DemonstrationProps[];
+  demonstration_url: string;
 }
 
 
