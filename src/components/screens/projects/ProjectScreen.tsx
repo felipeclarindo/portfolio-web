@@ -1,3 +1,6 @@
+"use client";
+
+import { useLanguage } from "@/contexts/LanguageContext";
 import { projectsData } from "@/mock/projectsData";
 import { StackProps } from "@/types/pages";
 import { notFound } from "next/navigation";
@@ -7,6 +10,7 @@ interface Props {
 }
 
 export default function ProjectScreen({ slug }: Props) {
+  const { language } = useLanguage();
   const project = projectsData.find((project) => project.slug === slug);
 
   if (!project) {
@@ -19,11 +23,11 @@ export default function ProjectScreen({ slug }: Props) {
     <section className="min-h-screen pt-32 pb-24 px-6 text-(--text-primary)">
       <div className="max-w-5xl mx-auto">
         <h1 className="text-4xl font-mono text-(--brand-primary) mb-6">
-          {project.title}
+          {project.title[language]}
         </h1>
 
         <p className="text-(--text-secondary) leading-relaxed mb-10">
-          {project.description}
+          {project.description[language]}
         </p>
 
         {video && (

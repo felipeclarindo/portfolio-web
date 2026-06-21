@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Resumer | Felipe Clarindo",
   description: "Resumer of Felipe Clarindo",
   icons: {
-    icon: "/images/logo.png",
+    icon: "/images/favicon.png",
   },
 };
 

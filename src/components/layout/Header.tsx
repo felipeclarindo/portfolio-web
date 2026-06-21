@@ -1,30 +1,45 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+
+import { useLanguage } from "@/contexts/LanguageContext";
+import { MenuItemProps } from "@/types/navigation";
+
+import Logo from "./Logo";
 import ThemeToggleButton from "../navigation/ThemeToggleButton";
 import LanguageToggleButton from "../navigation/LanguageToggleButton";
-import { MenuItemProps } from "@/types/navigation";
-import { useEffect, useState } from "react";
-import { hoverGlitch } from "@/lib/motion/motion";
-import { useLanguage } from "@/contexts/LanguageContext";
-import Logo from "./Logo";
+
+const GLITCH_BARS = [0, 1, 2, 3, 4, 5];
 
 export default function Header() {
   const { translate } = useLanguage();
   const [open, setOpen] = useState(false);
 
-  const navItems: MenuItemProps[] = [
-    { name: translate("header.home"), path: "/" },
-    { name: translate("header.projects"), path: "/projects" },
-    // { name: translate("header.resume"), path: "/resume" },
-    { name: translate("header.services"), path: "/services" },
-    // { name: translate("header.contact"), path: "/contact" },
-  ];
+  const navItems = useMemo<MenuItemProps[]>(
+    () => [
+      { name: translate("header.home"), path: "/" },
+      { name: translate("header.projects"), path: "/projects" },
+      { name: translate("header.services"), path: "/services" },
+    ],
+    [translate],
+  );
+
+  const openMenu = useCallback(() => {
+    setOpen(true);
+  }, []);
+
+  const closeMenu = useCallback(() => {
+    setOpen(false);
+  }, []);
 
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
+    document.body.style.overflow = open ? "hidden" : "auto";
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
   }, [open]);
 
   return (
@@ -44,29 +59,24 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-10 text-sm font-mono text-(--text-secondary)">
             {navItems.map((item) => (
-              <motion.div
-                key={item.name}
-                whileHover={hoverGlitch}
-                className="relative group"
-              >
+              <div key={item.path} className="relative group">
                 <Link
                   href={item.path}
                   className="
                     relative z-10
-                    transition-colors
+                    transition-colors duration-300
                     hover:text-(--brand-primary)
                   "
                 >
                   {item.name}
                 </Link>
 
-                {/* Glitch Bars */}
                 <div className="glitch-bars">
-                  {Array.from({ length: 6 }).map((_, i) => (
-                    <span key={i} />
+                  {GLITCH_BARS.map((bar) => (
+                    <span key={bar} />
                   ))}
                 </div>
-              </motion.div>
+              </div>
             ))}
           </nav>
 
@@ -79,7 +89,7 @@ export default function Header() {
 
             {/* Mobile Toggle */}
             <button
-              onClick={() => setOpen(true)}
+              onClick={openMenu}
               className="md:hidden text-(--text-primary)"
               aria-label="Open menu"
             >
@@ -89,48 +99,54 @@ export default function Header() {
         </div>
       </header>
 
-      {/* MOBILE MENU */}
-      {open && (
-        <div
-          className="
-            fixed inset-0 z-10000
-            bg-(--bg-tertiary)
-            flex flex-col
-            transition-colors
-          "
-        >
-          {/* Close */}
-          <div className="flex justify-end px-6 py-4">
-            <button
-              onClick={() => setOpen(false)}
-              className="text-(--brand-primary)"
-              aria-label="Close menu"
-            >
-              <X size={28} />
-            </button>
-          </div>
-
-          {/* Toggles */}
-          <div className="flex justify-center gap-4 pb-6">
-            <LanguageToggleButton />
-            <ThemeToggleButton />
-          </div>
-
-          {/* Mobile Nav */}
-          <nav className="flex flex-col items-center justify-center flex-1 gap-8 text-lg font-mono text-(--text-primary)">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.path}
-                onClick={() => setOpen(false)}
-                className="hover:text-(--brand-primary) transition-colors"
-              >
-                {item.name}
-              </Link>
-            ))}
-          </nav>
+      {/* Mobile Menu */}
+      <div
+        className={`
+          fixed inset-0 z-10000
+          bg-(--bg-tertiary)
+          flex flex-col
+          transition-all duration-300 ease-in-out
+          ${
+            open
+              ? "opacity-100 visible pointer-events-auto"
+              : "opacity-0 invisible pointer-events-none"
+          }
+        `}
+      >
+        {/* Close */}
+        <div className="flex justify-end px-6 py-4">
+          <button
+            onClick={closeMenu}
+            className="text-(--brand-primary)"
+            aria-label="Close menu"
+          >
+            <X size={28} />
+          </button>
         </div>
-      )}
+
+        {/* Toggles */}
+        <div className="flex justify-center gap-4 pb-6">
+          <LanguageToggleButton />
+          <ThemeToggleButton />
+        </div>
+
+        {/* Mobile Navigation */}
+        <nav className="flex flex-col items-center justify-center flex-1 gap-8 text-lg font-mono text-(--text-primary)">
+          {navItems.map((item) => (
+            <Link
+              key={item.path}
+              href={item.path}
+              onClick={closeMenu}
+              className="
+                transition-colors duration-300
+                hover:text-(--brand-primary)
+              "
+            >
+              {item.name}
+            </Link>
+          ))}
+        </nav>
+      </div>
     </>
   );
 }

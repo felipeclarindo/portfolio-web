@@ -3,191 +3,90 @@ import { ProjectProps } from "@/types/pages";
 export const projectsData: ProjectProps[] = [
   {
     id: "1",
-    slug: "portfolio",
-    title: "Personal Portfolio Website",
-    description:
-      "Modern personal portfolio built with Next.js, TypeScript and Framer Motion to showcase projects, skills and professional experience.",
-    host_url: "https://your-portfolio-domain.com",
-    github_url: "https://github.com/felipeclarindo/portfolio-web",
-    stacks: [
-      { id: "1", name: "Next.js" },
-      { id: "2", name: "React" },
-      { id: "3", name: "TypeScript" },
-      { id: "4", name: "Tailwind CSS" },
-      { id: "5", name: "Framer Motion" },
-    ],
-    demonstration_url: "",
-  },
+    slug: "territorio-midias-brasil",
+    title: {
+      pt: "Território Mídias Brasil",
+      en: "Território Mídias Brasil",
+    },
 
+    description: {
+      pt: "Rede nacional de comunicação popular criada em 2025 e consolidada em 2026, com o objetivo de articular, fortalecer e dar visibilidade a mídias periféricas, comunitárias e independentes de favelas, periferias e comunidades tradicionais em todo o país.",
+      en: "National popular communication network created in 2025 and consolidated in 2026, with the objective of articulating, strengthening and giving visibility to peripheral, community and independent media from favelas, peripheries and traditional communities throughout the country.",
+    },
+
+    host_url: "https://territoriomidiasbrasil.com.br/",
+    github_url: "",
+
+    stacks: [
+      { id: "1", name: "Wordpress" },
+      { id: "2", name: "PHP" },
+      { id: "3", name: "JavaScript" },
+    ],
+  },
   {
     id: "2",
-    slug: "student-manager",
-    title: "Student Management System",
-    description:
-      "Academic management platform with student registration, editing, notifications and real-time updates.",
-    host_url: "",
-    github_url: "",
-    stacks: [
-      { id: "1", name: "Next.js" },
-      { id: "2", name: "TypeScript" },
-      { id: "3", name: "React Query" },
-      { id: "4", name: "Tailwind CSS" },
-      { id: "5", name: "REST API" },
-    ],
-    demonstration_url: "",
-  },
+    slug: "cripto-g",
+    title: {
+      pt: "Cripto G",
+      en: "Cripto G",
+    },
 
+    description: {
+      pt: "Sistema de geração de senha para criação de senhas seguras e únicas, utilizando algoritmos de hash para transformar informações em senhas criptografadas, garantindo a segurança dos dados dos usuários.",
+      en: "Secure password generation system for creating unique passwords, utilizing hash algorithms to transform information into encrypted passwords, ensuring the security of user data.",
+    },
+
+    host_url: "",
+    github_url: "https://github.com/felipeclarindo/criptog",
+
+    stacks: [
+      { id: "1", name: "Python" },
+      { id: "2", name: "CustomTkInter" },
+    ],
+  },
   {
     id: "3",
-    slug: "customer-service-dashboard",
-    title: "Customer Service Dashboard",
-    description:
-      "Dashboard developed with Streamlit for monitoring customer support metrics and business indicators.",
-    host_url: "",
-    github_url: "",
+    slug: "marketing-portfolio-web",
+    title: {
+      pt: "Marketing Portfolio",
+      en: "Marketing Portfolio",
+    },
+    description: {
+      pt: "Site web de marketing desenvolvido com foco em SEO, onde é exibido todos os detalhes e informações necessarias com foco em atrair clientes.",
+      en: "Marketing website developed with a focus on SEO, where all the necessary details and information are displayed with the aim of attracting clients.",
+    },
+    host_url: "https://marketing-pamela-web.vercel.app/",
+    github_url: "https://github.com/felipeclarindo/marketing-pamela-web",
     stacks: [
-      { id: "1", name: "Python" },
-      { id: "2", name: "Streamlit" },
-      { id: "3", name: "Pandas" },
-      { id: "4", name: "Plotly" },
+      { id: "1", name: "TypeScript" },
+      { id: "2", name: "React" },
+      { id: "3", name: "Next.js" },
+      { id: "4", name: "Tailwind CSS" },
+      { id: "5", name: "SEO" },
+      { id: "6", name: "Google Analytics" },
     ],
-    demonstration_url: "",
   },
-
   {
     id: "4",
-    slug: "github-python-sdk",
-    title: "GitHub Python SDK",
-    description:
-      "Python library created to interact with GitHub repositories, issues and workflows through terminal commands.",
+    slug: "my-energy",
+    title: {
+      pt: "My Energy",
+      en: "My Energy",
+    },
+    description: {
+      pt: "Dashboard de monitoramento de consumo de energia elétrica, onde os usuários podem acompanhar em tempo real o consumo de energia em suas residências, identificar padrões de uso e receber recomendações para otimizar o consumo e reduzir custos.",
+      en: "Energy consumption monitoring dashboard, where users can track their electricity usage in real-time, identify usage patterns, and receive recommendations to optimize consumption and reduce costs.",
+    },
     host_url: "",
-    github_url: "",
+    github_url: "https://github.com/felipeclarindo/my-energy",
     stacks: [
-      { id: "1", name: "Python" },
-      { id: "2", name: "GitHub API" },
-      { id: "3", name: "CLI" },
+      { id: "1", name: "TypeScript" },
+      { id: "2", name: "React" },
+      { id: "3", name: "Next.js" },
+      { id: "4", name: "Tailwind CSS" },
+      { id: "5", name: "SEO" },
+      { id: "6", name: "Google Analytics" },
+      { id: "7", name: "Python" },
     ],
-    demonstration_url: "",
-  },
-
-  {
-    id: "5",
-    slug: "vehicle-ai-api",
-    title: "Vehicle Analysis AI API",
-    description:
-      "Machine learning API capable of identifying vehicle-related information from images using a custom dataset.",
-    host_url: "",
-    github_url: "",
-    stacks: [
-      { id: "1", name: "Python" },
-      { id: "2", name: "Flask" },
-      { id: "3", name: "TensorFlow" },
-      { id: "4", name: "OpenCV" },
-      { id: "5", name: "Machine Learning" },
-    ],
-    demonstration_url: "",
-  },
-
-  {
-    id: "6",
-    slug: "global-solution-api",
-    title: "Global Solution API",
-    description:
-      "RESTful API built for the Global Solution project, providing data management and integration services.",
-    host_url: "",
-    github_url: "",
-    stacks: [
-      { id: "1", name: "Django" },
-      { id: "2", name: "Django Ninja" },
-      { id: "3", name: "PostgreSQL" },
-      { id: "4", name: "Python" },
-    ],
-    demonstration_url: "",
-  },
-
-  {
-    id: "7",
-    slug: "renewable-energy-analysis",
-    title: "Renewable Energy Analytics",
-    description:
-      "Data science project focused on renewable energy analysis, predictive modeling and sustainability indicators.",
-    host_url: "",
-    github_url: "",
-    stacks: [
-      { id: "1", name: "Python" },
-      { id: "2", name: "Pandas" },
-      { id: "3", name: "Scikit-learn" },
-      { id: "4", name: "Matplotlib" },
-      { id: "5", name: "Flask" },
-    ],
-    demonstration_url: "",
-  },
-
-  {
-    id: "8",
-    slug: "vehicle-prediction-model",
-    title: "Vehicle Quantity Prediction",
-    description:
-      "Random Forest regression model developed to predict vehicle quantities from transportation datasets.",
-    host_url: "",
-    github_url: "",
-    stacks: [
-      { id: "1", name: "Python" },
-      { id: "2", name: "Scikit-learn" },
-      { id: "3", name: "Pandas" },
-      { id: "4", name: "Machine Learning" },
-    ],
-    demonstration_url: "",
-  },
-
-  {
-    id: "9",
-    slug: "password-manager-app",
-    title: "Password Manager App",
-    description:
-      "Cross-platform mobile application for secure password storage and management.",
-    host_url: "",
-    github_url: "",
-    stacks: [
-      { id: "1", name: "React Native" },
-      { id: "2", name: "TypeScript" },
-      { id: "3", name: "SQLite" },
-      { id: "4", name: "Encryption" },
-    ],
-    demonstration_url: "",
-  },
-
-  {
-    id: "10",
-    slug: "automation-suite",
-    title: "Automation Suite",
-    description:
-      "Collection of automation tools built with Selenium and PyAutoGUI for repetitive workflow optimization.",
-    host_url: "",
-    github_url: "",
-    stacks: [
-      { id: "1", name: "Python" },
-      { id: "2", name: "Selenium" },
-      { id: "3", name: "PyAutoGUI" },
-    ],
-    demonstration_url: "",
-  },
-
-  {
-    id: "11",
-    slug: "fullstack-management-platform",
-    title: "Full Stack Management Platform",
-    description:
-      "Complete web platform featuring authentication, dashboard modules, API integration and database management.",
-    host_url: "",
-    github_url: "",
-    stacks: [
-      { id: "1", name: "Next.js" },
-      { id: "2", name: "TypeScript" },
-      { id: "3", name: "Node.js" },
-      { id: "4", name: "PostgreSQL" },
-      { id: "5", name: "Docker" },
-    ],
-    demonstration_url: "",
   },
 ];

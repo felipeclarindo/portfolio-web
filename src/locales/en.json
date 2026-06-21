@@ -39,12 +39,16 @@
       "yearsOfExperience": "Years of Experience"
     }
   },
-
   "projects": {
     "title": "Projects",
-    "description": "Project developed with a focus on engineering, performance, and user experience. Each project solves a real problem.",
+    "description": "Project developed with a focus on engineering, performance, and user experience.",
     "seeMyServices": "See My Services",
-    "noProjects": "No projects to show at the moment. Please check back later."
+    "filterHeader": "Technologies",
+    "filterDescription": "Filter by one or more technologies",
+    "filterProject": "project",
+    "filterFound": "found",
+    "noProjects": "No projects to show at the moment. Please check back later.",
+    "searchPlaceholder": "Search projects by name or description"
   },
 
   "resume": {
@@ -58,7 +62,7 @@
 
   "services": {
     "title": "Services",
-    "description": "I help businesses and individuals build reliable, scalable and efficient digital solutions using modern technologies.",
+    "description": "I transform business challenges into scalable digital solutions, creating systems, platforms and automations that generate real value, sustainable growth and advantage for your business.",
     "subtitleOne": "What I offer",
     "subtitleTwo": "How it works",
     "stepsTitle": "Step",
@@ -74,7 +78,7 @@
     "serviceThreeDescription": "Automation of repetitive tasks, bots and scripts to improve productivity.",
     "serviceFourTitle": "Data & Machine Learning",
     "serviceFourDescription": "Data analysis, dashboards and predictive models for real-world problems.",
-    "temp": "Request"
+    "temp": "I want to close a project"
   },
 
   "contact": {

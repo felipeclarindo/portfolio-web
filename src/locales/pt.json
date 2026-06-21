@@ -41,9 +41,14 @@
 
   "projects": {
     "title": "Projetos",
-    "description": "Projetos desenvolvidos com foco em engenharia, performance e experiência do usuário. Cada projeto resolve um problema real.",
+    "description": "Projetos desenvolvidos com foco em engenharia, performance e experiência do usuário.",
     "seeMyServices": "Veja Meus Serviços",
-    "noProjects": "Nenhum projeto para mostrar no momento. Por favor, volte mais tarde."
+    "filterHeader": "Tecnologias",
+    "filterDescription": "Filtre por uma ou mais tecnologias",
+    "filterProject": "projeto",
+    "filterFound": "encontrados",
+    "noProjects": "Nenhum projeto para mostrar no momento. Por favor, volte mais tarde.",
+    "searchPlaceholder": "Pesquisar projetos por nome ou descrição"
   },
 
   "resume": {
@@ -57,7 +62,7 @@
 
   "services": {
     "title": "Serviços",
-    "description": "Eu ajudo empresas e indivíduos a construir soluções digitais confiáveis, escaláveis e eficientes usando tecnologias modernas.",
+    "description": "Transformo desafios de negócio em soluções digitais escaláveis, criando sistemas, plataformas e automações que geram valor real, crescimento sustentável e vantagem para o seu negócio.",
     "subtitleOne": "Quais serviços eu ofereço?",
     "subtitleTwo": "Como é o processo?",
     "stepsTitle": "Passo",
@@ -73,7 +78,7 @@
     "serviceThreeDescription": "Automação de tarefas repetitivas, bots e scripts para melhorar a produtividade.",
     "serviceFourTitle": "Dados e Machine Learning",
     "serviceFourDescription": "Análise de dados, painéis e modelos preditivos para problemas do mundo real.",
-    "temp": "Solicitar"
+    "temp": "Quero fechar um projeto"
   },
 
   "contact": {

@@ -11,14 +11,6 @@ export const container: Variants = {
   },
 };
 
-export const hoverGlitch = {
-  x: [0, -2, 2, -1, 1, 0],
-  transition: {
-    duration: 0.25,
-    ease: "easeInOut" as const,
-  },
-};
-
 export const item: Variants = {
   hidden: { opacity: 0, y: -24 },
   visible: {

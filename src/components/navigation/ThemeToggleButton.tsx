@@ -25,7 +25,6 @@ export default function ThemeToggleButton() {
         flex items-center justify-center
         w-9 h-9
         rounded-md
-        border border-(--border-primary)
         bg-(--bg-tertiary)
         text-(--text-secondary)
         hover:bg-(--brand-primary)

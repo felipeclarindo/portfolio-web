@@ -1,12 +1,23 @@
 import type { Metadata } from "next";
+import { projectsData } from "@/mock/projectsData";
+import { cookies } from "next/headers";
 
-export const metadata: Metadata = {
-  title: "Project {x}  | Felipe Clarindo",
-  description: "Specific project of Felipe Clarindo",
-  icons: {
-    icon: "/images/logo.png",
-  },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+
+  const project = projectsData.find((project) => project.slug === slug);
+
+  const locale = (await cookies()).get("locale")?.value === "en" ? "en" : "pt";
+
+  return {
+    title: `${project?.title[locale]} | Felipe Clarindo`,
+    description: project?.description[locale],
+  };
+}
 
 export default function ProjectLayout({
   children,

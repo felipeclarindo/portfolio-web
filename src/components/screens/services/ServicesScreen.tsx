@@ -111,19 +111,29 @@ export default function ServicesScreen() {
 
         {/* Temp */}
         <button
-          type="submit"
+          type="button"
+          onClick={() => {
+            const phone = "5511978590137"; 
+            const message = encodeURIComponent(
+              "Olá! Vi seu portfólio e gostaria de solicitar um orçamento para um projeto.",
+            );
+
+            window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
+          }}
           className="
-              block mx-auto
-              px-6
-              py-4
-              rounded-md
-              bg-(--brand-primary)
-              text-white
-              hover:bg-(--brand-primary-hover)
-              transition-all duration-300
-              font-mono
-              cursor-pointer
-            "
+          block mx-auto mt-10
+          px-8 py-4
+          rounded-xl
+          bg-linear-to-r from-(--brand-primary) to-(--brand-primary-hover)
+          text-white
+          font-mono font-semibold
+          shadow-lg shadow-black/20
+          hover:scale-[1.03]
+          hover:shadow-xl
+          active:scale-[0.98]
+          transition-all duration-300
+          cursor-pointer
+          "
         >
           {translate("services.temp")}
         </button>
