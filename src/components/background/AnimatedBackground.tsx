@@ -1,20 +1,21 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 
 export default function AnimatedBackground() {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const prefersReducedMotion = useReducedMotion();
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  if (!mounted) return null;
+  const isDark = useMemo(() => theme === "dark", [theme]);
 
-  const isDark = theme === "dark";
+  if (!mounted) return null;
 
   return (
     <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
@@ -28,15 +29,15 @@ export default function AnimatedBackground() {
 
       {/* Glow */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
+        initial={{ opacity: 0, scale: 0.95 }}
         animate={{
-          opacity: isDark ? 0.18 : 0.12,
-          scale: [1, 1.05, 1],
+          opacity: isDark ? 0.16 : 0.1,
+          scale: prefersReducedMotion ? 1 : [1, 1.03, 1],
         }}
         transition={{
-          opacity: { duration: 1.4 },
+          opacity: { duration: 1.2 },
           scale: {
-            duration: 12,
+            duration: 14,
             repeat: Infinity,
             ease: "easeInOut",
           },
@@ -44,49 +45,51 @@ export default function AnimatedBackground() {
         className="
           absolute top-1/2 left-1/2
           -translate-x-1/2 -translate-y-1/2
-          w-225 h-225
-          rounded-full blur-[220px]
+          w-xl
+          h-144
+          blur-[120px]
+          rounded-full
           bg-(--brand-primary)
+          will-change-transform
         "
       />
 
-      {/* GRID */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: isDark ? 0.15 : 0.08 }}
-        transition={{
-          opacity: { duration: 1.2, delay: 0.3 },
-          backgroundPosition: {
-            duration: 25,
-            repeat: Infinity,
-            ease: "linear",
-          },
-        }}
+      {/* Grid */}
+      <div
         className="
           absolute inset-0
+          opacity-10
           bg-[linear-gradient(to_right,var(--border-secondary)_1px,transparent_1px),
               linear-gradient(to_bottom,var(--border-secondary)_1px,transparent_1px)]
-          bg-size[48px_48px]
+          [background-size:48px_48px]
         "
+        style={{
+          opacity: isDark ? 0.12 : 0.06,
+        }}
       />
 
-      {/* Vertical Data Flow */}
+      {/* Vertical Flow */}
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{
-          opacity: isDark ? 0.1 : 0.05,
-          backgroundPositionY: ["0%", "100%"],
-        }}
+        initial={{ opacity: 0, y: "-20%" }}
+        animate={
+          prefersReducedMotion
+            ? { opacity: isDark ? 0.08 : 0.04 }
+            : {
+                opacity: isDark ? 0.08 : 0.04,
+                y: ["-10%", "10%", "-10%"],
+              }
+        }
         transition={{
-          opacity: { duration: 1, delay: 0.6 },
-          backgroundPositionY: {
-            duration: 20,
+          opacity: { duration: 1, delay: 0.5 },
+          y: {
+            duration: 18,
             repeat: Infinity,
             ease: "linear",
           },
         }}
         className="
-          absolute inset-0
+          absolute inset-[-20%]
+          will-change-transform
           bg-[linear-gradient(
             to_bottom,
             transparent 0%,
@@ -95,27 +98,31 @@ export default function AnimatedBackground() {
             var(--brand-soft) 70%,
             transparent 100%
           )]
-          bg-size[100%_220%]
         "
       />
 
       {/* Diagonal Flow */}
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{
-          opacity: isDark ? 0.08 : 0.04,
-          backgroundPositionX: ["0%", "100%"],
-        }}
+        initial={{ opacity: 0, x: "-10%" }}
+        animate={
+          prefersReducedMotion
+            ? { opacity: isDark ? 0.06 : 0.03 }
+            : {
+                opacity: isDark ? 0.06 : 0.03,
+                x: ["-5%", "5%", "-5%"],
+              }
+        }
         transition={{
-          opacity: { duration: 1, delay: 0.9 },
-          backgroundPositionX: {
-            duration: 35,
+          opacity: { duration: 1, delay: 0.8 },
+          x: {
+            duration: 24,
             repeat: Infinity,
             ease: "linear",
           },
         }}
         className="
-          absolute inset-0
+          absolute inset-[-20%]
+          will-change-transform
           bg-[linear-gradient(
             120deg,
             transparent 0%,
@@ -124,18 +131,32 @@ export default function AnimatedBackground() {
             var(--brand-soft) 80%,
             transparent 100%
           )]
-          bg-size[220%_100%]
         "
       />
 
-      {/* Noise Texture */}
-      <div
+      {/* Noise */}
+      <motion.div
         aria-hidden
+        animate={
+          prefersReducedMotion
+            ? {}
+            : {
+                x: [0, -12, 12, 0],
+                y: [0, 8, -8, 0],
+              }
+        }
+        transition={{
+          duration: 22,
+          repeat: Infinity,
+          ease: "linear",
+        }}
         className="
-          absolute inset-0
-          bg-[url('/images/noise.webp')]
-          opacity-[0.2]
-        "
+        absolute -inset-4
+        bg-[url('/images/noise.webp')]
+        bg-repeat
+        opacity-[0.10]
+        will-change-transform
+      "
       />
     </div>
   );

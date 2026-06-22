@@ -11,6 +11,7 @@ export default function Logo({ height, width }: Readonly<LogoProps>) {
         width={width}
         height={height}
         priority
+        className="w-auto h-auto"
       />
     </Link>
   );
