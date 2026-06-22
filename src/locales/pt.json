@@ -86,10 +86,40 @@
     "description": "Vamos conversar sobre ideias, projetos ou oportunidades.",
     "prompt": "formas de contato disponíveis"
   },
+  "cookiesPolicy": {
+    "title": "Política de Cookies",
+    "description": "Entenda como os cookies são utilizados neste site para melhorar sua experiência de navegação, analisar o desempenho e garantir o funcionamento adequado da plataforma.",
+
+    "lastUpdatedTitle": "Última atualização",
+    "lastUpdatedDescription": "Esta política pode ser atualizada periodicamente para refletir alterações legais ou melhorias no site.",
+
+    "introductionTitle": "O que são cookies?",
+    "introductionDescription": "Cookies são pequenos arquivos armazenados no seu dispositivo quando você visita um site. Eles ajudam a melhorar sua experiência, lembrar preferências e coletar informações de navegação.",
+
+    "typesTitle": "Tipos de cookies utilizados",
+
+    "essentialCookiesTitle": "Cookies Essenciais",
+    "essentialCookiesDescription": "Necessários para o funcionamento correto do site e não podem ser desativados.",
+
+    "analyticsCookiesTitle": "Cookies de Análise",
+    "analyticsCookiesDescription": "Utilizados para entender como os visitantes interagem com o site, permitindo melhorias contínuas na experiência do usuário.",
+
+    "functionalCookiesTitle": "Cookies Funcionais",
+    "functionalCookiesDescription": "Permitem lembrar preferências e personalizações para tornar a navegação mais conveniente.",
+
+    "thirdPartyCookiesTitle": "Cookies de Terceiros",
+    "thirdPartyCookiesDescription": "Alguns serviços externos, como ferramentas de análise e hospedagem, podem armazenar cookies próprios.",
+
+    "managementTitle": "Como gerenciar cookies",
+    "managementDescription": "Você pode configurar ou remover cookies diretamente nas configurações do seu navegador. A desativação de determinados cookies pode impactar algumas funcionalidades do site.",
+
+    "contactTitle": "Contato",
+    "contactDescription": "Se você tiver dúvidas sobre esta Política de Cookies, entre em contato através dos canais disponibilizados neste portfólio."
+  },
 
   "termsOfUse": {
     "title": "Termos de Uso",
-    "introduction": "Ao acessar e utilizar este site, você concorda em cumprir os termos descritos abaixo.",
+    "description": "Conheça as condições, responsabilidades e diretrizes para utilização deste portfólio e de seus conteúdos.",
     "section1": {
       "title": "Acesso ao Site",
       "content": "O acesso a este site é fornecido apenas para fins pessoais e informativos."
@@ -110,12 +140,12 @@
       "title": "Modificações",
       "content": "Estes Termos de Uso podem ser alterados a qualquer momento, sem aviso prévio."
     },
-    "lastUpdate": "Última atualização: Fevereiro de 2026"
+    "lastUpdate": "Última atualização: Junho de 2026"
   },
 
   "termsOfService": {
     "title": "Termos de Serviço",
-    "introduction": "Ao acessar este site, você concorda com os termos e condições descritos abaixo.",
+    "description": "Ao acessar este site, você concorda com os termos e condições descritos abaixo.",
     "section1": {
       "title": "Uso do Site",
       "content": "Você concorda em utilizar este site apenas para fins legais e de forma que não infrinja direitos de terceiros."
@@ -141,7 +171,7 @@
 
   "privacyPolicy": {
     "title": "Política de Privacidade",
-    "introduction": "A sua privacidade é importante para nós. Esta Política de Privacidade explica como as informações são coletadas, utilizadas e protegidas ao acessar este site.",
+    "description": "A sua privacidade é importante para nós. Esta Política de Privacidade explica como as informações são coletadas, utilizadas e protegidas ao acessar este site.",
     "section1": {
       "title": "Informações Coletadas",
       "content": "Podemos coletar informações pessoais como nome, e-mail e dados de uso quando você interage com o site."

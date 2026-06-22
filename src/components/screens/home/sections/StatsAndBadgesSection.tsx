@@ -10,7 +10,7 @@ export default function StatsSection() {
   const { translate } = useLanguage();
   const stats = useStats();
   const badges: BadgeProps[] = [];
-  
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -29,22 +29,20 @@ export default function StatsSection() {
             <div
               key={stat.label}
               className="
-                border border-[var(--border-primary)]
-                bg-[var(--bg-secondary)]
+                border border-(--border-primary)
+                bg-(--bg-secondary)
                 rounded-2xl
                 p-8
-                hover:border-[var(--brand-primary)]
+                hover:border-(--brand-primary)
                 hover:scale-[1.02]
                 transition-all duration-300
               "
             >
-              <h2 className="text-4xl font-bold text-[var(--brand-primary)] mb-2">
+              <h2 className="text-4xl font-bold text-(--brand-primary) mb-2">
                 <Counter to={stat.number} />
                 {stat.suffix}
               </h2>
-              <p className="text-[var(--text-muted)]">
-                {stat.label}
-              </p>
+              <p className="text-(--text-muted)">{stat.label}</p>
             </div>
           ))}
         </div>
@@ -57,43 +55,43 @@ export default function StatsSection() {
             {translate("home.badgesTitle")}
           </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-          {badges.map((badge) => (
-            <div
-              key={badge.title}
-              className="
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            {badges.map((badge) => (
+              <div
+                key={badge.title}
+                className="
                 relative
-                border border-[var(--border-primary)]
-                bg-[var(--bg-secondary)]
+                border border-(--border-primary)
+                bg-(--bg-secondary)
                 rounded-2xl
                 p-8
                 overflow-hidden
                 group
                 transition-all duration-300
-                hover:border-[var(--brand-primary)]
+                hover:border-(--brand-primary)
                 hover:shadow-[0_0_30px_rgba(0,255,128,0.2)]
               "
-            >
-              {/* Glow Effect */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-r from-transparent via-[var(--brand-primary)]/10 to-transparent blur-xl" />
+              >
+                {/* Glow Effect */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-linear-to-r from-transparent via-(--brand-primary)/10 to-transparent blur-xl" />
 
-              <div className="relative z-10 space-y-3">
-                <h3 className="text-xl font-semibold text-[var(--brand-primary)]">
-                  {badge.title}
-                </h3>
+                <div className="relative z-10 space-y-3">
+                  <h3 className="text-xl font-semibold text-(--brand-primary)">
+                    {badge.title}
+                  </h3>
 
-                <p className="text-sm text-[var(--text-muted)]">
-                  Issued by {badge.issuer} • {badge.year}
-                </p>
+                  <p className="text-sm text-(--text-muted)">
+                    Issued by {badge.issuer} • {badge.year}
+                  </p>
 
-                <p className="text-[var(--text-secondary)] text-sm leading-relaxed">
-                  {badge.description}
-                </p>
+                  <p className="text-(--text-secondary) text-sm leading-relaxed">
+                    {badge.description}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
       )}
     </motion.div>
   );

@@ -89,7 +89,7 @@
 
   "termsOfUse": {
     "title": "Terms of Use",
-    "introduction": "By accessing and using this website, you agree to comply with the terms described below.",
+    "description": "Learn about the conditions, responsibilities, and guidelines for using this portfolio and its content.",
     "section1": {
       "title": "Website Access",
       "content": "Access to this website is provided for personal and informational purposes only."
@@ -115,7 +115,7 @@
 
   "termsOfService": {
     "title": "Terms of Service",
-    "introduction": "By accessing this website, you agree to be bound by the terms and conditions described below.",
+    "description": "By accessing this website, you agree to be bound by the terms and conditions described below.",
     "section1": {
       "title": "Use of the Website",
       "content": "You agree to use this website only for lawful purposes and in a way that does not infringe the rights of others."
@@ -139,9 +139,40 @@
     "lastUpdate": "Last updated: February 2026"
   },
 
+  "cookiesPolicy": {
+    "title": "Cookies Policy",
+    "description": "Learn how cookies are used on this website to improve your browsing experience, analyze performance, and ensure the platform functions properly.",
+
+    "lastUpdatedTitle": "Last Updated",
+    "lastUpdatedDescription": "This policy may be updated periodically to reflect legal changes or website improvements.",
+
+    "introductionTitle": "What are cookies?",
+    "introductionDescription": "Cookies are small files stored on your device when you visit a website. They help improve your experience, remember preferences, and collect browsing information.",
+
+    "typesTitle": "Types of Cookies We Use",
+
+    "essentialCookiesTitle": "Essential Cookies",
+    "essentialCookiesDescription": "Required for the proper operation of the website and cannot be disabled.",
+
+    "analyticsCookiesTitle": "Analytics Cookies",
+    "analyticsCookiesDescription": "Used to understand how visitors interact with the website, helping us continuously improve the user experience.",
+
+    "functionalCookiesTitle": "Functional Cookies",
+    "functionalCookiesDescription": "Allow us to remember preferences and customizations to make navigation more convenient.",
+
+    "thirdPartyCookiesTitle": "Third-Party Cookies",
+    "thirdPartyCookiesDescription": "Some external services, such as analytics and hosting providers, may store their own cookies.",
+
+    "managementTitle": "How to Manage Cookies",
+    "managementDescription": "You can configure or remove cookies directly through your browser settings. Disabling certain cookies may affect some website functionalities.",
+
+    "contactTitle": "Contact",
+    "contactDescription": "If you have any questions regarding this Cookies Policy, please contact us through the channels provided on this portfolio."
+  },
+
   "privacyPolicy": {
     "title": "Privacy Policy",
-    "introduction": "Your privacy is important to us. This Privacy Policy explains how information is collected, used, and protected when you access this website.",
+    "description": "Your privacy is important to us. This Privacy Policy explains how information is collected, used, and protected when you access this website.",
     "section1": {
       "title": "Information We Collect",
       "content": "We may collect personal information such as name, email address, and usage data when you interact with the website."
@@ -162,7 +193,7 @@
       "title": "Changes to This Policy",
       "content": "This Privacy Policy may be updated at any time. Changes will be reflected on this page."
     },
-    "lastUpdate": "Last updated: February 2026"
+    "lastUpdate": "Last updated: June 2026"
   },
 
   "footer": {

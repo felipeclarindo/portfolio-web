@@ -3,7 +3,7 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
 import { container } from "@/lib/motion/motion";
-import Introduction from "../../ui/Introdution";
+import Introduction from "../../ui/Introduction";
 import Link from "next/link";
 
 export default function ContactScreen() {

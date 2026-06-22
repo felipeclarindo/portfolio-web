@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import Introduction from "../../ui/Introdution";
+import Introduction from "../../ui/Introduction";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ProjectProps } from "@/types/pages";
 import { projectsData } from "@/mock/projectsData";

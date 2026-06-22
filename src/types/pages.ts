@@ -41,8 +41,8 @@ export type ProjectProps = {
 
 // Layout
 export type LogoProps = {
-  width?: number;
-  height?: number;
+  width: number;
+  height: number;
   keyframe?: string;
 };
 

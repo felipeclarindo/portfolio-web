@@ -28,18 +28,18 @@ export default function BenefitsSection() {
             viewport={{ once: true }}
             transition={{ delay: index * 0.2 }}
             className="
-              border border-[var(--border-primary)]
-              bg-[var(--bg-secondary)]
+              border border-(--border-primary)
+              bg-(--bg-secondary)
               rounded-2xl
               p-8
-              hover:border-[var(--brand-primary)]
+              hover:border-(--brand-primary)
               transition-all duration-300
             "
           >
-            <h3 className="text-xl font-semibold text-[var(--brand-primary)] mb-4">
+            <h3 className="text-xl font-semibold text-(--brand-primary) mb-4">
               {benefit.title}
             </h3>
-            <p className="text-[var(--text-secondary)] leading-relaxed">
+            <p className="text-(--text-secondary) leading-relaxed">
               {benefit.desc}
             </p>
           </motion.div>

@@ -1,8 +1,9 @@
 // Texts
-export type IntroductionProps = {
-  text: string;
-  description: string | React.ReactNode;
-};
+export type IntroductionProps= {
+  text: React.ReactNode;
+  description?: React.ReactNode;
+  iconElement?: boolean;
+}
 
 // Footer
 export type FooterLinkProps = {
@@ -15,7 +16,7 @@ export type SocialIconProps = {
   href: string;
   label: string;
   children: React.ReactNode;
-}
+};
 
 export type CounterProps = {
   from?: number;

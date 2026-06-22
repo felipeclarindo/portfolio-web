@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Introduction from "../../ui/Introdution";
+import Introduction from "../../ui/Introduction";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { container } from "@/lib/motion/motion";
 import { useServices } from "@/mock/servicesData";
@@ -113,7 +113,7 @@ export default function ServicesScreen() {
         <button
           type="button"
           onClick={() => {
-            const phone = "5511978590137"; 
+            const phone = "5511978590137";
             const message = encodeURIComponent(
               "Olá! Vi seu portfólio e gostaria de solicitar um orçamento para um projeto.",
             );
